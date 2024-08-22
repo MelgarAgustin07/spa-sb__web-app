@@ -1,0 +1,47 @@
+.cmp-service {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pal-size-3xl);
+
+  h2 {
+    text-align: center;
+  }
+
+  ul {
+    flex-wrap: wrap;
+    gap: var(--pal-size-l);
+
+    li {
+      flex-grow: 1;
+      flex-basis: 28rem;
+
+      display: flex;
+      flex-wrap: wrap;
+
+      border-radius: var(--border-radius);
+      background-color: var(--pal-color-a-l2);
+      overflow: hidden;
+
+      div {
+        flex-grow: 1;
+        flex-basis: 26rem;
+
+        display: flex;
+        flex-direction: column;
+        gap: var(--pal-size-xl);
+        padding: var(--pal-size-xl);
+      }
+
+      img {
+        flex-grow: 1;
+
+        width: 15vw;
+        min-width: 14rem;
+        height: auto;
+        max-height: 12rem;
+
+        object-fit: cover;
+      }
+    }
+  }
+}

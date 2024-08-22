@@ -1,0 +1,154 @@
+{
+  "documentInfo": {
+    "title": {
+      "base": "SPA Sentirse Bien",
+      "separator": "•"
+    }
+  },
+  "socialNets": {
+    "title": "Cuenta de",
+    "items": [
+      {
+        "name": "Instagram",
+        "faIcon": "instagram",
+        "url": "https://www.instagram.com/"
+      },
+      {
+        "name": "Facebook",
+        "faIcon": "facebook",
+        "url": "https://www.facebook.com/"
+      }
+    ]
+  },
+  "footer": {
+    "sections": ["Secciones", "Servicios", "Redes"],
+    "copyright": "© 2024 Todos los derechos reservados",
+    "madeBy": {
+      "text": "Desarrollado por 🍵",
+      "link": {
+        "title": "Green Tea",
+        "url": ""
+      }
+    }
+  },
+  "NOT_FOUND": {
+    "title": "404"
+  },
+  "pages": {
+    "home": {
+      "page": "/",
+      "title": "Inicio",
+      "sections": {
+        "philosophy": {
+          "img": "",
+          "title": "Filosofía",
+          "text": "Buscamos atraer la atención de nuestros clientes a través de experiencias inspiradas en la seducción de sentidos, Adaptamos la propuestas con el objetivo de que logre desconectarse completamente de la rutina y disfrute de in momento de bienestar, en total armonía con la naturaleza."
+        },
+        "services": {
+          "title": "Servicios"
+        },
+        "reviews": {
+          "title": "Valoraciones"
+        }
+      }
+    },
+    "services": {
+      "page": "services",
+      "title": "Servicios",
+      "sections": [
+        {
+          "serviceKey": "massages",
+          "title": "Masajes",
+          "works": [
+            {
+              "title": "Anti-stress",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "Descontracturantes",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "Piedras calientes",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "Circulatorios",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            }
+          ]
+        },
+        {
+          "serviceKey": "beauty",
+          "title": "Belleza",
+          "works": [
+            {
+              "title": "Lifting de pestañas",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "Depilación facial",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "Belleza de manos y pies",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            }
+          ]
+        },
+        {
+          "serviceKey": "facial-treatments",
+          "title": "Tratamientos Faciales",
+          "works": [
+            {
+              "title": "Microexfoliación",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "Limpieza profunda + Hidratación",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "Criofrecuencia",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            }
+          ]
+        },
+        {
+          "serviceKey": "body-treatments",
+          "title": "Tratamientos Corporales",
+          "works": [
+            {
+              "title": "VelaSlim",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "DermoHealth",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "Criofrecuencia",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            },
+            {
+              "title": "Circulatorios",
+              "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
+            }
+          ]
+        }
+      ]
+    },
+    "book": {
+      "page": "book",
+      "title": "Reservar"
+    },
+    "news": {
+      "page": "news",
+      "title": "Novedades"
+    },
+    "join": {
+      "page": "join",
+      "title": "Unirse"
+    }
+  }
+}

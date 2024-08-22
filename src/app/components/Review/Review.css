@@ -1,0 +1,53 @@
+.review {
+  --profile-picture-size: var(--pal-size-xl);
+
+  position: relative;
+
+  flex-grow: 1;
+  flex-basis: 21rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--pal-size-s);
+  max-width: max-content;
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: var(--pal-size-s);
+
+    color: var(--pal-color-a-d1);
+
+    .profile-picture {
+      --cmp-icon-size: var(--pal-size-s);
+
+      align-content: center;
+      aspect-ratio: 1;
+      width: var(--profile-picture-size);
+
+      border-radius: 50%;
+      background-color: var(--pal-color-white);
+
+      .cmp-icon {
+        margin-inline: auto;
+      }
+    }
+
+    .stars {
+      --cmp-icon-size: var(--pal-size-s);
+
+      display: flex;
+      gap: var(--pal-size-2xs);
+    }
+  }
+
+  p {
+    margin-left: calc(var(--profile-picture-size) / 2);
+    padding: var(--pal-size-l);
+
+    border-radius: var(--border-radius);
+    border-top-left-radius: 0;
+    background-color: var(--pal-color-a-l2);
+  }
+}

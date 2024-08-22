@@ -1,0 +1,5 @@
+export { default as Hero } from './Hero/Hero'
+export { default as Icon } from './Icon/Icon'
+export { default as Separator } from './Separator/Separator'
+export { default as SimpleHero } from './SimpleHero/SimpleHero'
+export { default as SocialNet } from './SocialNet/SocialNet'

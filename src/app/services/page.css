@@ -1,0 +1,5 @@
+.explanation-services {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pal-size-3xl);
+}

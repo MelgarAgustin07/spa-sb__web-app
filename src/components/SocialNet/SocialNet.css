@@ -1,0 +1,14 @@
+.cmp-social-net {
+  --cmp-icon-size: var(--pal-size-font-m);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1;
+  width: var(--pal-size-2xl);
+
+  text-decoration: none;
+
+  background-color: var(--pal-color-white);
+  border-radius: var(--pal-size-2xs);
+}
