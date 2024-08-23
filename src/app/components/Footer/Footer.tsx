@@ -35,8 +35,8 @@ const Footer = () => (
           ))}
         </Section>
         <Section title={sections[1]}>
-          {services.sections.map(({ sectionKey, title }) => (
-            <Link key={sectionKey} href={`/services#${sectionKey}`}>
+          {services.sections.map(({ serviceKey, title }) => (
+            <Link key={serviceKey} href={`/services#${serviceKey}`}>
               {title}
             </Link>
           ))}
