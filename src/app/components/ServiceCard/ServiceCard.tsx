@@ -10,7 +10,7 @@ interface Props {
 
 const ServiceCard = ({ url, title, img }: Props) => (
   <Link className="cmp-service-card text" href={url}>
-    <Image src="/hero.webp" width={640} height={640} alt="P" />
+    <Image src="/hero.webp" width={1280} height={720} alt="P" />
     {title}
   </Link>
 )

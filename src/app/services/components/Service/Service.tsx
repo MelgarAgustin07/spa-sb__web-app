@@ -21,10 +21,9 @@ const Service = ({ serviceKey, title: serviceTitle, works }: Props) => (
             <p className="text">{desc}</p>
           </div>
           <Image
-            src={`/hero.webp`}
-            // src={`/services/${serviceKey}/${index}.webp`}
-            width={640}
-            height={640}
+            src={`/services/${serviceKey}-${index}.webp`}
+            width={1280}
+            height={720}
             alt={`Foto del trabajo "${title}" en ${serviceTitle}`}
           />
         </li>

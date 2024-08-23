@@ -131,12 +131,16 @@
               "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
             },
             {
-              "title": "Circulatorios",
+              "title": "Ultracavitación",
               "desc": "Moviliza los distintos tejidos de la piel y estimula la microcirculación, generando un drenaje linfático."
             }
           ]
         }
       ]
+    },
+    "see": {
+      "page": "see",
+      "title": "Consultar"
     },
     "book": {
       "page": "book",

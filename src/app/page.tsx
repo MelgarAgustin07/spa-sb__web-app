@@ -40,7 +40,7 @@ const Home = () => (
   <>
     <Hero title={title} />
     <section className="philosophy">
-      <Image src="/home/philosophy.webp" width={608} height={608} alt="" />
+      <Image src="/home/philosophy.webp" width={720} height={720} alt="" />
       <div>
         <h2>{philosophy.title}</h2>
         <p className="text">{philosophy.text}</p>
@@ -54,7 +54,7 @@ const Home = () => (
             key={serviceKey}
             url={`/services#${serviceKey}`}
             title={title}
-            img=""
+            img="webp"
           />
         ))}
       </div>
