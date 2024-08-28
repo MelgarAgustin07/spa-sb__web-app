@@ -4,6 +4,7 @@ import './ReserveForm.css'
 import { Button, Input } from '@/components'
 import { ChangeEventHandler, FormEventHandler, useState, useMemo } from 'react'
 import jsonData from '@/data.json'
+import { AvailableAppts } from './components'
 
 const { sections } = jsonData.pages.services
 
@@ -52,8 +53,9 @@ const ReserveForm = () => {
         min={todayFormatted}
         onChange={handleDateChange}
       />
+      <AvailableAppts date={date} />
       <label>
-        Comentarios:
+        Comentarios
         <textarea id="story" name="story" rows={5} cols={33} />
       </label>
       <area id="date" title="Fecha" />

@@ -5,9 +5,11 @@ import '@/styles/global.css'
 import './layout.css'
 import { Footer, Header } from './components'
 import { getTitle } from '@/constants'
+import { PrivateInterceptor, PublicInterceptor } from '@/interceptors'
 import { Metadata } from 'next'
 import { Public_Sans, EB_Garamond } from 'next/font/google'
 import Script from 'next/script'
+import { UserService } from '@/services'
 
 export const metadata: Metadata = {
   title: getTitle(),
@@ -16,6 +18,9 @@ export const metadata: Metadata = {
 
 const publicSans = Public_Sans({ subsets: ['latin'] })
 const ebGaramond = EB_Garamond({ subsets: ['latin'] })
+
+PublicInterceptor()
+PrivateInterceptor()
 
 const Layout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
   <html lang="es">
