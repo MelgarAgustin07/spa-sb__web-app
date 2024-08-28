@@ -1,3 +1,4 @@
+import '@/styles/normalize.css'
 import '@/styles/palette.css'
 import '@/styles/global.css'
 

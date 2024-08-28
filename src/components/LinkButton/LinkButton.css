@@ -1,0 +1,23 @@
+.cmp-link-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-width: var(--glb-line-width);
+  border-style: solid;
+  border-color: var(--pal-color-a);
+  padding-inline: var(--pal-size-2xs);
+  width: 100%;
+  height: var(--pal-size-2xl);
+
+  text-decoration: none;
+  color: var(--pal-color-a-d1);
+
+  border-radius: var(--pal-size-2xs);
+  cursor: pointer;
+
+  transition: background-color var(--pal-time-s) ease-out;
+
+  &:hover {
+    background-color: rgba(var(--pal-color-base-a), 0.125);
+  }
+}

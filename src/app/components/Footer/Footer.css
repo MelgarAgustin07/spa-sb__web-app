@@ -60,7 +60,6 @@
     color: var(--pal-color-a-d1);
 
     small {
-      font-size: var(--pal-size-font-xs);
       text-align: center;
       text-underline-offset: var(--pal-size-3xs);
     }
