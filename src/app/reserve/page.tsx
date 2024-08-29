@@ -14,8 +14,10 @@ export const metadata: Metadata = {
 const Reserve = () => (
   <>
     <SimpleHero title={title} />
-    <section>
-      <ReserveForm />
+    <section className="reserve section-form size-l">
+      <div className="card">
+        <ReserveForm />
+      </div>
     </section>
   </>
 )

@@ -1,8 +1,5 @@
-/* TODO: controlar los gap principales desde aquí */
-
 body {
   --border-radius: 0.375rem;
-  --layout-max-width: 82rem;
 
   position: relative;
 
@@ -17,9 +14,10 @@ body {
 
   main {
     padding-inline: var(--pal-size-l);
-    max-width: var(--layout-max-width);
+    width: 100%;
+    max-width: 82rem;
 
-    > * {
+    > section {
       position: relative;
 
       padding-block: 8rem;
