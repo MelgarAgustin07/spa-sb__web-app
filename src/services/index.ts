@@ -1,1 +1,1 @@
-export * as UserService from './users.service'
+export * as ClientService from './client.service'

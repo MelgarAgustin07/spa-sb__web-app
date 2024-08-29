@@ -9,7 +9,7 @@ import { PrivateInterceptor, PublicInterceptor } from '@/interceptors'
 import { Metadata } from 'next'
 import { Public_Sans, EB_Garamond } from 'next/font/google'
 import Script from 'next/script'
-import { UserService } from '@/services'
+import { ClientService } from '@/services'
 
 export const metadata: Metadata = {
   title: getTitle(),

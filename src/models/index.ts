@@ -1,1 +1,1 @@
-export * as UserModel from './users.model'
+export * as ClientModel from './client.model'

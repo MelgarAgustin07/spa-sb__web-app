@@ -1,1 +1,1 @@
-export * as UserAdapter from './users.adapter'
+export * as ClientAdapter from './client.adapter'
