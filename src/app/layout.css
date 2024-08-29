@@ -17,7 +17,7 @@ body {
     width: 100%;
     max-width: 82rem;
 
-    > section {
+    > * {
       position: relative;
 
       padding-block: 8rem;
