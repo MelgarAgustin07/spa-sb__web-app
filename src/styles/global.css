@@ -6,9 +6,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: 1;
 
+  line-height: 1;
   color: inherit;
+
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--pal-color-a-l1) transparent;
@@ -51,6 +52,10 @@ h3 > * {
   font-weight: 600;
 }
 
+small {
+  font-size: var(--pal-size-font-xs);
+}
+
 ul,
 ol {
   display: flex;
@@ -71,7 +76,6 @@ input {
 
 button {
   border: none;
-  background-color: transparent;
   cursor: pointer;
 
   &:disabled {
@@ -82,6 +86,12 @@ button {
   &:active {
     box-shadow: initial !important;
   }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--pal-size-l);
 }
 
 .text {
@@ -115,4 +125,11 @@ button {
   background-color: var(--pal-color-a-l2);
 
   content: '';
+}
+
+.card {
+  padding: var(--pal-size-xl);
+
+  border-radius: var(--border-radius);
+  background-color: var(--pal-color-white);
 }

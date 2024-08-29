@@ -11,7 +11,7 @@ body {
   align-items: center;
 
   font-family: var(--pal-font-a);
-  color: var(--pal-color-gs-900);
+  color: rgba(var(--pal-color-base-black), 0.875);
 
   overflow-x: hidden;
 
@@ -19,7 +19,7 @@ body {
     padding-inline: var(--pal-size-l);
     max-width: var(--layout-max-width);
 
-    > section {
+    > * {
       position: relative;
 
       padding-block: 8rem;

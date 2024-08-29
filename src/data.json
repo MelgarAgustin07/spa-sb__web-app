@@ -142,8 +142,8 @@
       "page": "see",
       "title": "Consultar"
     },
-    "book": {
-      "page": "book",
+    "reserve": {
+      "page": "reserve",
       "title": "Reservar"
     },
     "news": {
@@ -153,6 +153,10 @@
     "join": {
       "page": "join",
       "title": "Unirse"
+    },
+    "login": {
+      "page": "auth/login",
+      "title": "Acceder"
     }
   }
 }
