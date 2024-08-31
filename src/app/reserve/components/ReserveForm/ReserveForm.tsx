@@ -1,7 +1,7 @@
 'use client'
 
 import './ReserveForm.css'
-import { Button, Input } from '@/components'
+import { Button, Input, TextArea } from '@/components'
 import { ChangeEventHandler, FormEventHandler, useState, useMemo } from 'react'
 import jsonData from '@/data.json'
 import { AvailableAppts } from './components'
@@ -54,11 +54,7 @@ const ReserveForm = () => {
         onChange={handleDateChange}
       />
       <AvailableAppts date={date} />
-      <label>
-        Comentarios
-        <textarea id="story" name="story" rows={5} cols={33} />
-      </label>
-      <area id="date" title="Fecha" />
+      <TextArea id="text" title="Comentarios" />
       <Button title="Reservar" />
     </form>
   )

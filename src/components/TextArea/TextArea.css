@@ -1,0 +1,7 @@
+.cmp-text-area textarea {
+  resize: none;
+  padding: var(--pal-size-s);
+  min-height: 8rem;
+
+  field-sizing: content;
+}
