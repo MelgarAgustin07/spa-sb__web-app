@@ -39,10 +39,16 @@
       "page": "/",
       "title": "Inicio",
       "sections": {
-        "philosophy": {
-          "img": "",
-          "title": "Filosofía",
-          "text": "Buscamos atraer la atención de nuestros clientes a través de experiencias inspiradas en la seducción de sentidos, Adaptamos la propuestas con el objetivo de que logre desconectarse completamente de la rutina y disfrute de in momento de bienestar, en total armonía con la naturaleza."
+        "aboutUs": {
+          "img": {
+            "file": "about-us.webp",
+            "alt": "Imagen representativa de un ambiente natural y relajante, ideal para desconectar de la rutina en el spa Sentirse Bien"
+          },
+          "title": "Sobre nosotros",
+          "text": [
+            "Buscamos atraer la atención de nuestros clientes a través de experiencias inspiradas en la seducción de los sentidos. Adaptamos las propuestas con el objetivo de que logre desconectarse completamente de la rutina y disfrute de un momento de bienestar, en total armonía con la naturaleza.",
+            "El spa Sentirse Bien, se dedica a proporcionar experiencias únicas que cautivan y seducen los sentidos de sus clientes. Teniendo como objetivo crear un ambiente que permita a sus clientes desconectarse completamente de la rutina diaria y sumergirse en un oasis de bienestar. Adoptando cada una de sus propuestas cuidadosamente para ofrecer momentos de relajación y armonía, siempre en estrecho contacto con la naturaleza. Por lo que necesita poder publicitar por medio de una pagina web los servicios que ofrece y a su vez administrar sus turnos mas eficazmente brindando a sus clientes una agenda donde seleccionen los horarios disponibles y puedan dejar opiniones o consultas."
+          ]
         },
         "services": {
           "title": "Servicios"
