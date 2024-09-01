@@ -21,7 +21,7 @@
     ]
   },
   "footer": {
-    "sections": ["Secciones", "Servicios", "Redes"],
+    "sections": ["Secciones", "Servicios", "Redes", "Ubicación"],
     "copyright": "© 2024 Todos los derechos reservados",
     "madeBy": {
       "text": "Desarrollado por 🍵",

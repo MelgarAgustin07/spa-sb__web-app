@@ -1,7 +1,9 @@
 body {
-  --border-radius: 0.375rem;
   --glb-line-width: 0.0625rem;
+  --layout-max-width: 82rem;
   --aside-width: 0rem;
+  --border-radius: 0.375rem;
+  --padding-inline: var(--pal-size-l);
 
   position: relative;
   left: calc(var(--aside-width) * -1);
@@ -21,9 +23,9 @@ body {
   }
 
   main {
-    padding-inline: var(--pal-size-l);
+    padding-inline: var(--padding-inline);
     width: 100%;
-    max-width: 82rem;
+    max-width: var(--layout-max-width);
 
     > * {
       position: relative;
