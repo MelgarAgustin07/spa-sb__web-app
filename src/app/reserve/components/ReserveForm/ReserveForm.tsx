@@ -28,16 +28,16 @@ const ReserveForm = () => {
   return (
     <form className="cmp-reserve-form" onSubmit={handleSubmit}>
       <div className="treatments">
-        {sections.map(({ title, works, serviceKey }) => (
+        {sections.map(({ title, treatments, serviceKey }) => (
           <fieldset key={serviceKey}>
             <legend>{title}</legend>
-            {works.map((work, index) => {
+            {treatments.map((treatment, index) => {
               const key = [serviceKey, index].join('_')
 
               return (
                 <label key={key} className="text">
                   <input type="radio" name="treatment" value={key} required />
-                  {work.title}
+                  {treatment.title}
                 </label>
               )
             })}
