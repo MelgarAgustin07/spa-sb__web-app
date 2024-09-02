@@ -60,13 +60,8 @@ const Home = () => (
     <section className="services full-background">
       <h2>{services.title}</h2>
       <div className="items">
-        {pages.stable.services.sections.map(({ serviceKey, title }) => (
-          <ServiceCard
-            key={serviceKey}
-            url={`/services#${serviceKey}`}
-            title={title}
-            img="webp"
-          />
+        {pages.stable.services.sections.map(service => (
+          <ServiceCard key={service.serviceKey} {...service} />
         ))}
       </div>
     </section>

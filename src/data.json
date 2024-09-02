@@ -63,7 +63,8 @@
           {
             "serviceKey": "massages",
             "title": "Masajes",
-            "works": [
+            "defaultTreatmentImg": 3,
+            "treatments": [
               {
                 "title": "Anti-stress",
                 "desc": "Es un masaje que estimula la microcirculación y relajación profunda de la zona, generando un drenaje linfático completo. Excelente para finalizar tus días."
@@ -85,7 +86,8 @@
           {
             "serviceKey": "beauty",
             "title": "Belleza",
-            "works": [
+            "defaultTreatmentImg": 2,
+            "treatments": [
               {
                 "title": "Lifting de pestañas",
                 "desc": "Este servicio alisa, levanta y estira las pestañas suavemente. El Lifting se recomienda para corregir las pestañas rectas, descendientes o con remolinos. Se realiza perfilado de cejas a modo de obsequio."
@@ -103,7 +105,8 @@
           {
             "serviceKey": "facial-treatments",
             "title": "Tratamientos Faciales",
-            "works": [
+            "defaultTreatmentImg": 2,
+            "treatments": [
               {
                 "title": "Microexfoliación",
                 "desc": "Este servicio induce la renovación de las capas superficiales de la piel ayudando a eliminar finas arrugas y manchas brindando un aspecto rejuvenecido. Lo realizamos con aparatolgía como ser Microdermoabrasión o de manera química, con ácidos."
@@ -121,7 +124,8 @@
           {
             "serviceKey": "body-treatments",
             "title": "Tratamientos Corporales",
-            "works": [
+            "defaultTreatmentImg": 3,
+            "treatments": [
               {
                 "title": "VelaSlim",
                 "desc": "Es un tratamiento no-invasivo que reduce la celulitis, y que modela el contorno corporal. Junto con el masaje, para la movilización de grasas y la radiofrecuencia bipolar es excelente para la destrucción de adiposidades localizadas y reafirmación de la piel."
