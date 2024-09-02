@@ -5,7 +5,7 @@ import { Review, ServiceCard } from './components'
 import jsonData from '@/data.json'
 
 const { pages } = jsonData
-const { home } = pages
+const { home } = pages.stable
 const { title, sections } = home
 const { aboutUs, services, reviews } = sections
 
@@ -60,7 +60,7 @@ const Home = () => (
     <section className="services full-background">
       <h2>{services.title}</h2>
       <div className="items">
-        {pages.services.sections.map(({ serviceKey, title }) => (
+        {pages.stable.services.sections.map(({ serviceKey, title }) => (
           <ServiceCard
             key={serviceKey}
             url={`/services#${serviceKey}`}

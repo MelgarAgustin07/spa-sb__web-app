@@ -40,6 +40,7 @@
 
         transition: background-color var(--pal-time-s) ease-out;
 
+        &:has(input:checked),
         &:hover {
           background-color: var(--pal-color-a-l2);
         }

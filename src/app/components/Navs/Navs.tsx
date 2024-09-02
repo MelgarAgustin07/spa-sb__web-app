@@ -9,8 +9,9 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import jsonData from '@/data.json'
 
 const { pages } = jsonData
+const { stable } = pages
 
-const links = reassemble(pages, (_, { page, title }) => ({
+const links = reassemble(stable, (_, { page, title }) => ({
   href: `/${page}`,
   title,
 }))

@@ -6,7 +6,7 @@ import { ChangeEventHandler, FormEventHandler, useState, useMemo } from 'react'
 import jsonData from '@/data.json'
 import { AvailableAppts } from './components'
 
-const { sections } = jsonData.pages.services
+const { sections } = jsonData.pages.stable.services
 
 const formatDate = (date: Date) => date.toISOString().slice(0, 10)
 

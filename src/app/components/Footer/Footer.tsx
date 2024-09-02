@@ -7,11 +7,11 @@ import { reassemble } from '@/helpers'
 import jsonData from '@/data.json'
 
 const { socialNets, footer, pages } = jsonData
-const { services } = jsonData.pages
-
 const { sections, copyright, madeBy } = footer
+const { stable } = pages
+const { services } = stable
 
-const links = reassemble(pages, (_, { page, title }) => ({
+const links = reassemble(stable, (_, { page, title }) => ({
   href: `/${page}`,
   title,
 }))
