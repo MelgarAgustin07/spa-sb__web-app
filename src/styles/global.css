@@ -181,7 +181,7 @@ form {
 
     line-height: 1;
     border-radius: var(--pal-size-2xs);
-    background-color: transparent;
+    background-color: var(--control-background-color, transparent);
 
     transition: color var(--pal-time-s) ease-out,
       border-color var(--pal-time-s) ease-out;

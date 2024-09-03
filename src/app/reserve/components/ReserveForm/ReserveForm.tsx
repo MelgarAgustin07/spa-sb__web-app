@@ -54,7 +54,7 @@ const ReserveForm = () => {
         onChange={handleDateChange}
       />
       <AvailableAppts date={date} />
-      <TextArea id="text" title="Comentarios" />
+      <TextArea id="comment" title="Comentarios" />
       <Button title="Reservar" />
     </form>
   )

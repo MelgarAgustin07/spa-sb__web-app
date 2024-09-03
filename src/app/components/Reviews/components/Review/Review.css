@@ -45,7 +45,7 @@
     }
   }
 
-  p {
+  .comment {
     margin-left: calc(var(--profile-picture-size) / 2);
     padding: var(--pal-size-l);
 

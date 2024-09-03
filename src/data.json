@@ -49,10 +49,12 @@
             ]
           },
           "services": {
-            "title": "Servicios"
+            "title": "Nuestros servicios"
           },
           "reviews": {
-            "title": "Valoraciones"
+            "title": "Opiniones de clientes",
+            "subtitle": "¿Ya nos visitaste?",
+            "placeholder": "Cuéntanos cómo fue tu experiencia ..."
           }
         }
       },
