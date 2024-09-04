@@ -10,7 +10,13 @@ const Hero = ({ title, children }: Props) => {
   return (
     <section className="hero">
       <h1>{title}</h1>
-      <Image src="/hero.webp" width={1920} height={1920} alt="" />
+      <Image
+        src="/hero.webp"
+        width={1920}
+        height={1920}
+        alt=""
+        loading="eager"
+      />
       {children}
     </section>
   )
