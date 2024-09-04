@@ -1,9 +1,11 @@
 'use client'
 
-import { Separator } from '@/components'
 import './Reviews.css'
+import { Separator } from '@/components'
 import { Review, ReviewForm } from './components'
+import { useEffect } from 'react'
 import jsonData from '@/data.json'
+import { publicInstance } from '@/helpers'
 
 const { reviews } = jsonData.pages.stable.home.sections
 
@@ -34,20 +36,32 @@ const betterReviews = [
   },
 ]
 
-const Reviews = () => (
-  <section className="reviews">
-    <h2>{reviews.title}</h2>
-    <ul>
-      {betterReviews.map(({ id, rating, comment }) => (
-        <Review key={id} rating={rating} comment={comment} />
-      ))}
-    </ul>
-    <Separator />
-    <article>
-      <h3>{reviews.subtitle}</h3>
-      <ReviewForm />
-    </article>
-  </section>
-)
+const Reviews = () => {
+  useEffect(() => {
+    const fetchReviews = async () => {
+      const response = await publicInstance.get('/reviews')
+
+      console.log(response)
+    }
+
+    fetchReviews()
+  }, [])
+
+  return (
+    <section className="reviews">
+      <h2>{reviews.title}</h2>
+      <ul>
+        {betterReviews.map(({ id, rating, comment }) => (
+          <Review key={id} rating={rating} comment={comment} />
+        ))}
+      </ul>
+      <Separator />
+      <article>
+        <h3>{reviews.subtitle}</h3>
+        <ReviewForm />
+      </article>
+    </section>
+  )
+}
 
 export default Reviews
