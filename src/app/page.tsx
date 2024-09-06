@@ -1,18 +1,41 @@
 import './page.css'
 import Image from 'next/image'
-import { Hero } from '@/components'
+import { Hero, LinkButton } from '@/components'
 import { Reviews, ServiceCard } from './components'
 import jsonData from '@/data.json'
 
-const { pages } = jsonData
-const { home } = pages.stable
-const { title, sections } = home
-const { aboutUs, services } = sections
+const { pages, documentInfo } = jsonData
+const { stable, dynamic } = pages
+const { home } = stable
+const { reserve } = dynamic
+const { sections } = home
+const { hero, aboutUs, services } = sections
+const { phrase } = hero
 
 const Home = () => (
   <>
-    <Hero title={title} />
-    <section className="about-us">
+    <Hero handleClass="home-hero">
+      <header>
+        <h1 className="text">{documentInfo.title.base}</h1>
+        <p className="text">{phrase}</p>
+      </header>
+      <div className="full-background glass">
+        <div>
+          <LinkButton
+            title={reserve.title}
+            faIcon="fa-regular fa-calendar-check"
+            href={reserve.page}
+            style={{ size: 'l' }}
+          />
+          <LinkButton
+            title="Descubre más"
+            href="#about-us"
+            style={{ type: 'secondary', size: 'l' }}
+          />
+        </div>
+      </div>
+    </Hero>
+    <section className="about-us" id="about-us">
       <Image
         src={`/home/${aboutUs.img.file}`}
         width={1024}
@@ -33,7 +56,7 @@ const Home = () => (
     <section className="services full-background">
       <h2>{services.title}</h2>
       <div className="items">
-        {pages.stable.services.sections.map(service => (
+        {stable.services.sections.map(service => (
           <ServiceCard key={service.serviceKey} {...service} />
         ))}
       </div>

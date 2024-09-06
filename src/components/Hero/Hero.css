@@ -2,13 +2,9 @@
   position: relative;
 
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   height: 100dvh;
-
-  h1 {
-    color: var(--pal-color-white);
-  }
 
   img {
     position: absolute;
@@ -19,6 +15,7 @@
     height: 100%;
 
     object-fit: cover;
+    object-position: 50% 0%;
     filter: brightness(0.6);
   }
 }

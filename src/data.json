@@ -37,6 +37,9 @@
         "page": "/",
         "title": "Inicio",
         "sections": {
+          "hero": {
+            "phrase": "Relájate, date un capricho, disfruta y quiérete"
+          },
           "aboutUs": {
             "img": {
               "file": "about-us.webp",
@@ -158,12 +161,15 @@
       },
       "join": {
         "page": "join",
-        "title": "Unirse"
+        "title": "Postularse"
       }
     },
     "dynamic": {
       "notFound": {
-        "title": "404"
+        "hero": {
+          "title": "Error 404",
+          "text": "El error 404 ocurre cuando se intenta acceder a una página que no existe en un sitio web. Este problema puede surgir debido a una URL incorrecta, una página eliminada o problemas de redirección."
+        }
       },
       "login": {
         "page": "auth/login",
@@ -180,6 +186,10 @@
       "reserve": {
         "page": "reserve",
         "title": "Reservar"
+      },
+      "queries": {
+        "page": "queries",
+        "title": "Consultas"
       }
     }
   }
