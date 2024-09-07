@@ -5,9 +5,9 @@ import { Review, ServiceCard } from './components'
 import jsonData from '@/data.json'
 
 const { pages } = jsonData
-const { home } = pages
+const { home } = pages.stable
 const { title, sections } = home
-const { philosophy, services, reviews } = sections
+const { aboutUs, services, reviews } = sections
 
 const betterReviews = [
   {
@@ -39,23 +39,29 @@ const betterReviews = [
 const Home = () => (
   <>
     <Hero title={title} />
-    <section className="philosophy">
-      <Image src="/home/philosophy.webp" width={720} height={720} alt="" />
+    <section className="about-us">
+      <Image
+        src={`/home/${aboutUs.img.file}`}
+        width={1024}
+        height={1024}
+        alt={aboutUs.img.alt}
+      />
       <div>
-        <h2>{philosophy.title}</h2>
-        <p className="text">{philosophy.text}</p>
+        <h2>{aboutUs.title}</h2>
+        <div className="paragraphs">
+          {aboutUs.text.map((paragraph, index) => (
+            <p key={index} className="text">
+              {paragraph}
+            </p>
+          ))}
+        </div>
       </div>
     </section>
     <section className="services full-background">
       <h2>{services.title}</h2>
       <div className="items">
-        {pages.services.sections.map(({ serviceKey, title }) => (
-          <ServiceCard
-            key={serviceKey}
-            url={`/services#${serviceKey}`}
-            title={title}
-            img="webp"
-          />
+        {pages.stable.services.sections.map(service => (
+          <ServiceCard key={service.serviceKey} {...service} />
         ))}
       </div>
     </section>
