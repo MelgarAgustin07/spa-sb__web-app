@@ -1,8 +1,3 @@
-export enum PersonalRole {
-  EMPLOYEE = 'EMPLOYEE',
-  ADMIN = 'ADMIN',
-}
-
 export interface MinData {
   id: number
   name: string
@@ -12,7 +7,7 @@ export interface RemainingData {
   lastName: string
   email: string
   phone?: string | null
-  role: PersonalRole
+  role: string
 }
 
 export interface FullData extends MinData, RemainingData {}
@@ -22,7 +17,7 @@ export interface CreateData {
   lastName: string
   email: string
   phone: string
-  role: PersonalRole
+  role: string
   password: string
 }
 
@@ -31,6 +26,6 @@ export interface CreateBody {
   lastName: string
   email: string
   phone: string
-  role: PersonalRole
+  role: string
   password: string
 }

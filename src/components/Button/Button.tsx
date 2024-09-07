@@ -7,11 +7,10 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   hideText?: boolean
 }
 
-const Button = ({ title, faIcon, hideText, children, ...rest }: Props) => (
+const Button = ({ title, faIcon, hideText, ...rest }: Props) => (
   <button className="cmp-button" title={title} {...rest}>
     {!hideText && title}
     {faIcon && <Icon faIcon={faIcon} />}
-    {children}
   </button>
 )
 

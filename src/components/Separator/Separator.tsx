@@ -16,7 +16,7 @@ const Separator = ({
   const props: HTMLAttributes<HTMLElement> = {
     className: classList(
       'cmp-separator',
-      { inverted: style.invert },
+      { 'cmp-separator--inverted': style.invert },
       handlingClass
     ),
   }

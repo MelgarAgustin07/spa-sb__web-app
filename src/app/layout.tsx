@@ -3,12 +3,13 @@ import '@/styles/palette.css'
 import '@/styles/global.css'
 
 import './layout.css'
-import { Footer, Navs } from './components'
+import { Footer, Header } from './components'
 import { getTitle } from '@/constants'
 import { PrivateInterceptor, PublicInterceptor } from '@/interceptors'
 import { Metadata } from 'next'
 import { Public_Sans, EB_Garamond } from 'next/font/google'
 import Script from 'next/script'
+import { ClientService } from '@/services'
 
 export const metadata: Metadata = {
   title: getTitle(),
@@ -29,7 +30,7 @@ const Layout = ({ children }: Readonly<{ children: React.ReactNode }>) => (
         '--pal-font-b': ebGaramond.style.fontFamily,
       }}
     >
-      <Navs />
+      <Header />
       <main>{children}</main>
       <Footer />
     </body>

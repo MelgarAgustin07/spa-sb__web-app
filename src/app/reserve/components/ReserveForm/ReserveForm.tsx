@@ -1,12 +1,12 @@
 'use client'
 
 import './ReserveForm.css'
-import { Button, Input, TextArea } from '@/components'
+import { Button, Input } from '@/components'
 import { ChangeEventHandler, FormEventHandler, useState, useMemo } from 'react'
 import jsonData from '@/data.json'
 import { AvailableAppts } from './components'
 
-const { sections } = jsonData.pages.stable.services
+const { sections } = jsonData.pages.services
 
 const formatDate = (date: Date) => date.toISOString().slice(0, 10)
 
@@ -28,16 +28,16 @@ const ReserveForm = () => {
   return (
     <form className="cmp-reserve-form" onSubmit={handleSubmit}>
       <div className="treatments">
-        {sections.map(({ title, treatments, serviceKey }) => (
+        {sections.map(({ title, works, serviceKey }) => (
           <fieldset key={serviceKey}>
             <legend>{title}</legend>
-            {treatments.map((treatment, index) => {
+            {works.map((work, index) => {
               const key = [serviceKey, index].join('_')
 
               return (
                 <label key={key} className="text">
                   <input type="radio" name="treatment" value={key} required />
-                  {treatment.title}
+                  {work.title}
                 </label>
               )
             })}
@@ -54,7 +54,11 @@ const ReserveForm = () => {
         onChange={handleDateChange}
       />
       <AvailableAppts date={date} />
-      <TextArea id="text" title="Comentarios" />
+      <label>
+        Comentarios
+        <textarea id="story" name="story" rows={5} cols={33} />
+      </label>
+      <area id="date" title="Fecha" />
       <Button title="Reservar" />
     </form>
   )

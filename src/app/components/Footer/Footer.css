@@ -11,10 +11,9 @@
   align-items: center;
   gap: var(--gap-l);
   padding-block: var(--gap-l);
-  padding-inline: var(--padding-inline);
+  padding-inline: var(--gap-m);
   padding-bottom: var(--gap-s);
   width: 100%;
-  max-width: var(--layout-max-width);
 
   color: var(--pal-color-a-d2);
 
@@ -38,37 +37,13 @@
     }
 
     .sections {
-      flex-grow: 1;
-      flex-basis: 55rem;
-
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 4rem;
 
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        row-gap: var(--pal-size-m);
-        column-gap: var(--gap-s);
-
-        a {
-          text-wrap: nowrap;
-          text-decoration: none;
-        }
-
-        &.social-nets {
-          gap: var(--pal-size-m);
-        }
-      }
-
-      .map {
-        border-width: var(--glb-line-width);
-        border-style: solid;
-        border-color: var(--pal-color-a-l1);
-        width: 100%;
-
-        border-radius: var(--border-radius);
+      .cmp-section:nth-last-of-type(1) > div {
+        flex-direction: row;
       }
     }
   }
