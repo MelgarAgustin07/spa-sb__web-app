@@ -16,11 +16,11 @@ const Home = () => (
   <>
     <Hero handleClass="home-hero">
       <header>
-        <h1 className="text">{documentInfo.title.base}</h1>
-        <p className="text">{phrase}</p>
+        <h1 className="text enter-animate">{documentInfo.title.base}</h1>
+        <p className="text enter-animate">{phrase}</p>
       </header>
       <div className="full-background glass">
-        <div>
+        <div className="enter-animate">
           <LinkButton
             title={reserve.title}
             faIcon="fa-regular fa-calendar-check"

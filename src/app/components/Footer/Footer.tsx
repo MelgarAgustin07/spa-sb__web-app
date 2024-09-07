@@ -24,7 +24,7 @@ const Footer = () => (
         src="/logo.svg"
         width={128}
         height={128}
-        alt="P"
+        alt="P" // TODO: alt
       />
       <div className="sections">
         <Section title={sections[0]}>

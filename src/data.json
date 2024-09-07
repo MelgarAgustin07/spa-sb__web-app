@@ -187,6 +187,10 @@
         "page": "reserve",
         "title": "Reservar"
       },
+      "myAppts": {
+        "page": "my-appts",
+        "title": "Mis Turnos"
+      },
       "queries": {
         "page": "queries",
         "title": "Consultas"

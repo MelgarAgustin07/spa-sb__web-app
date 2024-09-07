@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   height: 100dvh;
+  /* TODO: no contar el header */
 
   img {
     position: absolute;
@@ -16,6 +17,6 @@
 
     object-fit: cover;
     object-position: 50% 0%;
-    filter: brightness(0.6);
+    filter: brightness(0.75);
   }
 }

@@ -10,6 +10,7 @@ interface Props {
 const Hero = ({ handleClass, children }: Props) => (
   <section className={classList('hero', handleClass)}>
     <Image src="/hero.webp" width={2048} height={1162} alt="" loading="eager" />
+    {/* TODO: alt */}
     {children}
   </section>
 )

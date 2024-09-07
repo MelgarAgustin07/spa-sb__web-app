@@ -13,7 +13,7 @@
 
     p {
       font-size: var(--pal-size-font-l);
-      color: var(--pal-color-a-l2);
+      color: var(--pal-color-a-d2);
     }
   }
 
@@ -37,6 +37,20 @@
         }
       }
     }
+  }
+
+  .enter-animate {
+    scale: 0.875;
+    opacity: 0;
+
+    animation: show 3s ease forwards;
+  }
+}
+
+@keyframes show {
+  to {
+    scale: initial;
+    opacity: initial;
   }
 }
 
