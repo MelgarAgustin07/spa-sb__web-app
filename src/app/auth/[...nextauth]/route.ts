@@ -1,3 +1,4 @@
+import { AuthService } from '@/services'
 import NextAuth from 'next-auth'
 import { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
@@ -14,6 +15,9 @@ const authOptions: NextAuthOptions = {
       },
 
       async authorize(credentials) {
+        // const response = AuthService.login(credentials)
+
+        // TODO: llamar a login en AuthService
         const res = await fetch(`${process.env.API_URL}/auth/login`, {
           method: 'POST',
           body: JSON.stringify(credentials),

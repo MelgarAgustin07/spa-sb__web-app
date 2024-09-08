@@ -1,6 +1,8 @@
 import './ReviewForm.css'
 import { Button, Icon, TextArea } from '@/components'
 import { FormEventHandler, useState } from 'react'
+import { ReviewModel } from '@/models'
+import { ReviewService } from '@/services'
 import jsonData from '@/data.json'
 
 const { placeholder } = jsonData.pages.stable.home.sections.reviews
@@ -16,10 +18,14 @@ const ReviewForm = () => {
   const handleSubmit: FormEventHandler<HTMLFormElement> = async event => {
     event.preventDefault()
 
-    const data = new FormData(event.currentTarget)
+    const formData = new FormData(event.currentTarget)
 
-    const comment = data.get('comment') as string
-    const rating = selectedStar
+    const createData: ReviewModel.CreateData = {
+      stars: Number(formData.get('stars')) as ReviewModel.StarRating,
+      comment: formData.get('comment') as string,
+    }
+
+    const response = await ReviewService.create(createData)
   }
 
   return (
@@ -45,7 +51,7 @@ const ReviewForm = () => {
                 />
                 <input
                   title={`${starIndex} estrella/s`}
-                  name="star"
+                  name="stars"
                   type="radio"
                   value={starIndex}
                   required
@@ -61,6 +67,7 @@ const ReviewForm = () => {
           id="comment"
           title="Comentarios"
           placeholder={placeholder}
+          required
           hideLabel
         />
       </div>

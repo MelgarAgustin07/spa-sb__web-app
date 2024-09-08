@@ -1,3 +1,3 @@
-export * as ClientService from './client.service'
-export * as PersonalService from './personal.service'
-export * as ReviewService from './personal.service'
+export * as AuthService from './auth.service'
+export * as UserService from './user.service'
+export * as ReviewService from './review.service'

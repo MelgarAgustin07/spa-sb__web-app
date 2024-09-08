@@ -2,14 +2,14 @@ import { ReviewModel } from '@/models'
 import { InputAdapter, OutputAdapter } from '@/helpers'
 
 export const getBetter: {
-  output: OutputAdapter<any, ReviewModel.Data>
+  output: OutputAdapter<any[], ReviewModel.Data[]>
 } = {
   output: response => {
-    const convertedResource: ReviewModel.Data = {
-      id: response.id,
-      stars: response.star,
-      comment: response.comment,
-    }
+    const convertedResource: ReviewModel.Data[] = response.map(item => ({
+      id: item.id,
+      stars: item.star,
+      comment: item.comment,
+    }))
 
     return convertedResource
   },
