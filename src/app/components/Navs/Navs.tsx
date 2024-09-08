@@ -46,7 +46,14 @@ const Navs = () => {
   return (
     <SessionProvider>
       <header className="cmp-header">
-        <Image className="logo" src="/logo.svg" width={40} height={40} alt="" />
+        <Image
+          className="logo"
+          src="/logo.svg"
+          width={40}
+          height={40}
+          alt=""
+          priority
+        />
         {/* TODO: alt */}
         <Links />
         <Hamburger isOpen={isAsideOpen} handleClick={handleHamburgerClick} />

@@ -1,8 +1,10 @@
 import './ReviewForm.css'
-import { Button, Icon, TextArea } from '@/components'
-import { FormEventHandler, useState } from 'react'
+import { Icon, StateButton, TextArea } from '@/components'
+import { useState } from 'react'
+import { useFetchState } from '@/hooks'
 import { ReviewModel } from '@/models'
 import { ReviewService } from '@/services'
+import { AppError } from '@/helpers'
 import jsonData from '@/data.json'
 
 const { placeholder } = jsonData.pages.stable.home.sections.reviews
@@ -15,18 +17,23 @@ const ReviewForm = () => {
   const handleMouseLeave = () => setHoveredStar(null)
   const handleClick = (index: number) => setSelectedStar(index)
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = async event => {
-    event.preventDefault()
+  const { fetchState, handleSubmit } = useFetchState(
+    async ({ formData, setLoading, setError, setSuccess }) => {
+      const createData: ReviewModel.CreateData = {
+        stars: Number(formData.get('stars')) as ReviewModel.StarRating,
+        comment: formData.get('comment') as string,
+      }
 
-    const formData = new FormData(event.currentTarget)
+      await setLoading()
+      const response = await ReviewService.create(createData)
 
-    const createData: ReviewModel.CreateData = {
-      stars: Number(formData.get('stars')) as ReviewModel.StarRating,
-      comment: formData.get('comment') as string,
+      if (!response || response instanceof AppError) {
+        await setError()
+      } else {
+        await setSuccess()
+      }
     }
-
-    const response = await ReviewService.create(createData)
-  }
+  )
 
   return (
     <form className="cmp-review-form review" onSubmit={handleSubmit}>
@@ -71,7 +78,12 @@ const ReviewForm = () => {
           hideLabel
         />
       </div>
-      <Button title="Enviar" />
+      <StateButton
+        text="Enviar"
+        title="Enviar reseña"
+        faIcon="fa-solid fa-arrow-right"
+        fetchState={fetchState}
+      />
     </form>
   )
 }
