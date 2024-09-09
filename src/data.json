@@ -57,7 +57,8 @@
           "reviews": {
             "title": "Opiniones de clientes",
             "subtitle": "¿Ya nos visitaste?",
-            "placeholder": "Cuéntanos cómo fue tu experiencia ..."
+            "placeholder": "Cuéntanos cómo fue tu experiencia ...",
+            "thanks": "¡Gracias! Su opinión es valiosa y nos ayuda a seguir brindando un mejor servicio."
           }
         }
       },

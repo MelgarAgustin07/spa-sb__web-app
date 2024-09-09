@@ -3,7 +3,7 @@
 import './Reviews.css'
 import { ReviewModel } from '@/models'
 import { ReviewService } from '@/services'
-import { Separator } from '@/components'
+import { Banner, Separator } from '@/components'
 import { Review, ReviewForm } from './components'
 import { useEffect, useState } from 'react'
 import { AppError } from '@/helpers'
@@ -18,8 +18,8 @@ const Reviews = () => {
     const fetchAsync = async () => {
       const bestReviewsData = await ReviewService.getTheBest()
 
-      if (!bestReviewsData || bestReviewsData instanceof AppError) {
-      } else setBestReviews(bestReviewsData)
+      if (bestReviewsData && !(bestReviewsData instanceof AppError))
+        setBestReviews(bestReviewsData)
     }
 
     fetchAsync()
@@ -28,14 +28,14 @@ const Reviews = () => {
   return (
     <section className="reviews">
       <h2>{reviews.title}</h2>
-      {bestReviews ? (
+      {!bestReviews || bestReviews.length === 0 ? (
+        <Banner type="no-content" text="Nada por aquí ..." />
+      ) : (
         <ul>
           {bestReviews.map(review => (
             <Review key={review.id} {...review} />
           ))}
         </ul>
-      ) : (
-        <p>Nada por aquí</p>
       )}
       <Separator />
       <article>

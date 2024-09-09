@@ -1,3 +1,4 @@
+export { default as Banner } from './Banner/Banner'
 export { default as Button } from './Button/Button'
 export { default as Hero } from './Hero/Hero'
 export { default as Icon } from './Icon/Icon'
