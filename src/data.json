@@ -5,6 +5,9 @@
       "separator": "•"
     }
   },
+  "logo": {
+    "alt": "Logo del Spa Sentirse Bien"
+  },
   "socialNets": {
     "title": "Cuenta de",
     "items": [
@@ -152,9 +155,14 @@
           }
         ]
       },
-      "consult": {
-        "page": "consult",
-        "title": "Consultar"
+      "inquire": {
+        "page": "inquire",
+        "title": "Consultar",
+        "form": {
+          "title": "Deja tu pregunta",
+          "button": "Consultar"
+        },
+        "thanks": "¡Gracias! Recibirás nuestra respuesta en un plazo de hasta 24 horas a través del correo que nos has proporcionado."
       },
       "news": {
         "page": "news",
@@ -200,8 +208,8 @@
         "page": "my-appts",
         "title": "Mis Turnos"
       },
-      "queries": {
-        "page": "queries",
+      "inquiries": {
+        "page": "inquiries",
         "title": "Consultas"
       }
     }

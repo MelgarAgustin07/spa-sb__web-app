@@ -4,9 +4,9 @@ import { Input, StateButton } from '@/components'
 import { useFetchState } from '@/hooks'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
-import jsonData from '@/data.json'
 import { AuthService } from '@/services'
 import { AppError } from '@/helpers'
+import jsonData from '@/data.json'
 
 const { signUp, profile } = jsonData.pages.dynamic
 const { title, button } = signUp.form
@@ -57,6 +57,7 @@ const SignUpForm = () => {
           id="phone"
           title="Teléfono"
           type="tel"
+          // TODO: test del formato
           pattern="\+54[0-9]{11}"
           placeholder="+54___________"
         />

@@ -5,6 +5,9 @@ import Image from 'next/image'
 import { Hamburger, Links } from './components'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { SessionProvider } from 'next-auth/react'
+import jsonData from '@/data.json'
+
+const { logo } = jsonData
 
 const Navs = () => {
   const asideRef = useRef<HTMLElement | null>(null)
@@ -51,10 +54,9 @@ const Navs = () => {
           src="/logo.svg"
           width={40}
           height={40}
-          alt=""
+          alt={logo.alt}
           priority
         />
-        {/* TODO: alt */}
         <Links />
         <Hamburger isOpen={isAsideOpen} handleClick={handleHamburgerClick} />
       </header>

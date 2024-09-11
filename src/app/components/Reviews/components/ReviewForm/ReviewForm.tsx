@@ -1,7 +1,7 @@
 import './ReviewForm.css'
 import { Banner, Icon, StateButton, TextArea } from '@/components'
-import { useState, useEffect } from 'react'
-import { useFetchState } from '@/hooks'
+import { useState } from 'react'
+import { useFetchState, useShowBanner } from '@/hooks'
 import { ReviewModel } from '@/models'
 import { ReviewService } from '@/services'
 import { AppError } from '@/helpers'
@@ -12,7 +12,6 @@ const { placeholder, thanks } = jsonData.pages.stable.home.sections.reviews
 const ReviewForm = () => {
   const [hoveredStar, setHoveredStar] = useState<number | null>(null)
   const [selectedStar, setSelectedStar] = useState<number | null>(null)
-  const [hasShownBanner, setHasShownBanner] = useState(false)
 
   const handleMouseEnter = (index: number) => setHoveredStar(index)
   const handleMouseLeave = () => setHoveredStar(null)
@@ -35,11 +34,9 @@ const ReviewForm = () => {
     }
   )
 
-  useEffect(() => {
-    if (fetchState === 'success' && !hasShownBanner) setHasShownBanner(true)
-  }, [fetchState, hasShownBanner])
+  const { showBanner } = useShowBanner(fetchState)
 
-  return hasShownBanner ? (
+  return showBanner ? (
     <Banner text={thanks} />
   ) : (
     <form className="cmp-review-form review" onSubmit={handleSubmit}>

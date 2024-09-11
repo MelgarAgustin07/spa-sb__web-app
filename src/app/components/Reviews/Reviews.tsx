@@ -27,7 +27,7 @@ const Reviews = () => {
 
   return (
     <section className="reviews">
-      <h2>{reviews.title}</h2>
+      <h2 className="text">{reviews.title}</h2>
       {!bestReviews || bestReviews.length === 0 ? (
         <Banner type="no-content" text="Nada por aquí ..." />
       ) : (
