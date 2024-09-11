@@ -28,6 +28,5 @@ export const register = async (data: UserModel.CreateClientData) => {
 
   if (!response || response instanceof AppError) return response as AppError
 
-  const adaptedResponse = AuthAdapter.register.output(response.data)
-  return adaptedResponse
+  return true
 }

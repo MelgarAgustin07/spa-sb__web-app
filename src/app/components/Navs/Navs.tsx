@@ -59,7 +59,7 @@ const Navs = () => {
         <Hamburger isOpen={isAsideOpen} handleClick={handleHamburgerClick} />
       </header>
       <aside className="cmp-aside" ref={asideRef}>
-        <Links style={{ type: 'aside' }} />
+        <Links type="aside" />
       </aside>
     </SessionProvider>
   )

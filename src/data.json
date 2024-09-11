@@ -174,11 +174,19 @@
       },
       "login": {
         "page": "auth/login",
-        "title": "Iniciar sesión"
+        "title": "Iniciar sesión",
+        "form": {
+          "title": "Bienvenido",
+          "button": "Acceder"
+        }
       },
       "signUp": {
         "page": "auth/sign-up",
-        "title": "Registrarse"
+        "title": "Registrarse",
+        "form": {
+          "title": "Crea tu cuenta",
+          "button": "Crear y acceder"
+        }
       },
       "profile": {
         "page": "profile",

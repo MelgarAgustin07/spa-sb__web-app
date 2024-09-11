@@ -8,7 +8,7 @@ export interface Data {
   id: number
   name: string
   lastName: string
-  phone: string
+  phone: string | null
   email: string
   role: Role
   profilePhotoUrl: string
@@ -18,7 +18,7 @@ export interface Data {
 export interface CreateClientData {
   name: string
   lastName: string
-  phone: string
+  phone?: string
   email: string
   password: string
 }
@@ -26,7 +26,7 @@ export interface CreateClientData {
 export interface CreateClientBody {
   name: string
   lastname: string
-  phone: string
+  phone?: string
   email: string
   password: string
 }

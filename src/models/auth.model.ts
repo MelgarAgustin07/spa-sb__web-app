@@ -10,7 +10,7 @@ export interface LoginBody {
   password: string
 }
 
-export interface RegisterData {
+export interface AuthData {
   user: UserModel.Data
-  token: string
+  accessToken: string
 }

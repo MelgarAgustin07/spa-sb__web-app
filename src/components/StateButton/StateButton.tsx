@@ -10,7 +10,12 @@ interface Props {
   fetchState: FetchState
 }
 
-const StateButton = ({ text, title, faIcon, fetchState }: Props) => (
+const StateButton = ({
+  text,
+  title,
+  faIcon = 'fa-solid fa-arrow-right',
+  fetchState,
+}: Props) => (
   <button
     className="cmp-state-button button-look"
     title={title}
@@ -27,7 +32,7 @@ const StateButton = ({ text, title, faIcon, fetchState }: Props) => (
     />
     <div className={classList('body', { active: fetchState === 'ready' })}>
       {text}
-      {faIcon && <Icon faIcon={faIcon} />}
+      <Icon faIcon={faIcon} />
     </div>
   </button>
 )

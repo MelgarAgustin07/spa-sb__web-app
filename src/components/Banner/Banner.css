@@ -16,7 +16,7 @@
   border-width: var(--glb-line-width);
   border-style: solid;
   padding: var(--pal-size-xl);
-  width: 100%;
+  max-width: 33rem;
 
   border-radius: var(--border-radius);
   background-color: var(--pal-color-white);

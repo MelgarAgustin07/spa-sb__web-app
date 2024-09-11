@@ -20,15 +20,14 @@ const ReviewForm = () => {
 
   const { fetchState, handleSubmit } = useFetchState(
     async ({ formData, setLoading, setError, setSuccess }) => {
-      const createData: ReviewModel.CreateData = {
+      await setLoading()
+
+      const createResponse = await ReviewService.create({
         stars: Number(formData.get('stars')) as ReviewModel.StarRating,
         comment: formData.get('comment') as string,
-      }
+      })
 
-      await setLoading()
-      const response = await ReviewService.create(createData)
-
-      if (!response || response instanceof AppError) {
+      if (!createResponse || createResponse instanceof AppError) {
         await setError()
       } else {
         await setSuccess()
