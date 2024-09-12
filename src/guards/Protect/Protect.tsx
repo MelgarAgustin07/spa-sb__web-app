@@ -6,7 +6,7 @@ import { useSession } from 'next-auth/react'
 import { UserModel } from '@/models'
 import jsonData from '@/data.json'
 
-const { page } = jsonData.pages.dynamic.login
+const { login } = jsonData.pages.dynamic
 
 interface Props {
   allowedRoles?: UserModel.Role[]
@@ -15,19 +15,33 @@ interface Props {
 
 const Protect = ({ allowedRoles, children }: Props) => {
   const router = useRouter()
-
   const { data, status } = useSession()
 
   useEffect(() => {
-    if (status === 'unauthenticated') router.push(`/${page}`)
+    if (status === 'loading') return
 
-    const role = data?.user?.role as any
+    if (status === 'unauthenticated') {
+      router.push(`/${login.page}`)
+      return
+    }
 
-    if (allowedRoles && !allowedRoles.includes(role))
+    const role = data?.user?.role as UserModel.Role
+
+    if (
+      status === 'authenticated' &&
+      allowedRoles &&
+      !allowedRoles.includes(role)
+    ) {
       router.push('/unauthorized')
+    }
   }, [status, router, allowedRoles, data])
 
-  return status === 'loading' ? (
+  // useEffect(() => {
+  //   console.log(status)
+  //   console.log(data)
+  // }, [status, data])
+
+  return status !== 'authenticated' ? (
     <div className="page-loading">
       <Loader />
     </div>
