@@ -202,7 +202,11 @@
       },
       "reserve": {
         "page": "reserve",
-        "title": "Reservar"
+        "title": "Reservar",
+        "form": {
+          "title": "Elija su turno",
+          "button": "Reservar"
+        }
       },
       "myAppts": {
         "page": "my-appts",

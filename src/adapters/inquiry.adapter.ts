@@ -41,7 +41,6 @@ export const create: {
       phone: data.phone,
       email: data.email,
       description: data.desc,
-      created_at: data.createdAt,
     }
     return convertedResource
   },

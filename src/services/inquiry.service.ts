@@ -1,11 +1,12 @@
 import { InquiryModel } from '@/models'
 import { InquiryAdapter } from '@/adapters'
-import { AppError, privateInstance, publicInstance } from '@/helpers'
+import { AppError, publicInstance } from '@/helpers'
 
 const collection = '/consultations'
 
 export const getPending = async () => {
-  const response = await privateInstance.get(`${collection}`)
+  // const response = await publicInstance.get(`${collection}/pending`)
+  const response = await publicInstance.get(collection)
   if (!response || response instanceof AppError) return response as AppError
 
   const adaptedResponse = InquiryAdapter.getPending.output(response.data)
@@ -28,7 +29,7 @@ export const answer = async (
   const { id } = params
   const adaptedInput = InquiryAdapter.answer.input(data)
 
-  const response = await privateInstance.post(
+  const response = await publicInstance.post(
     `${collection}/${id}/answer`,
     adaptedInput
   )

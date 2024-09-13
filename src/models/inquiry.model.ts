@@ -18,7 +18,6 @@ export interface CreateData {
   phone?: string
   email: string
   desc: string
-  createdAt: string
 }
 
 export interface CreateBody {
@@ -27,5 +26,4 @@ export interface CreateBody {
   phone?: string
   email: string
   description: string
-  created_at: string
 }
