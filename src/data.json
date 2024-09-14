@@ -170,7 +170,8 @@
       },
       "join": {
         "page": "join",
-        "title": "Postularse"
+        "title": "Postularse",
+        "email": "newuser_0525@outlook.com"
       }
     },
     "dynamic": {
@@ -206,7 +207,8 @@
         "form": {
           "title": "Elija su turno",
           "button": "Reservar"
-        }
+        },
+        "thanks": "¡Tu reserva ha sido confirmada! Puedes ver los detalles en la sección 'Mis Turnos'. ¡Te esperamos!"
       },
       "myAppts": {
         "page": "my-appts",

@@ -5,8 +5,7 @@ import { AppError, publicInstance } from '@/helpers'
 const collection = '/consultations'
 
 export const getPending = async () => {
-  // const response = await publicInstance.get(`${collection}/pending`)
-  const response = await publicInstance.get(collection)
+  const response = await publicInstance.get(`${collection}/get/pending`)
   if (!response || response instanceof AppError) return response as AppError
 
   const adaptedResponse = InquiryAdapter.getPending.output(response.data)

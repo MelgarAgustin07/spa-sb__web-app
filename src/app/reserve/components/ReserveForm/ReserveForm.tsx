@@ -2,14 +2,15 @@
 
 import './ReserveForm.css'
 import { ChangeEventHandler, useState, useMemo } from 'react'
-import { Input, StateButton, TextArea } from '@/components'
+import { Banner, Input, StateButton, TextArea } from '@/components'
 import { AvailableAppts } from './components'
-import { useFetchState } from '@/hooks'
+import { useFetchState, useShowBanner } from '@/hooks'
 import jsonData from '@/data.json'
 
 const { stable, dynamic } = jsonData.pages
 const { sections } = stable.services
-const { title, button } = dynamic.reserve.form
+const { form, thanks } = dynamic.reserve
+const { title, button } = form
 
 const formatDate = (date: Date) => date.toISOString().slice(0, 10)
 
@@ -26,6 +27,14 @@ const ReserveForm = () => {
 
   const { fetchState, handleSubmit } = useFetchState(
     async ({ formData, setLoading, setError, setSuccess }) => {
+      const response = {
+        treatment: formData.get('treatment') as string,
+        date: formData.get('date') as string,
+        comment: formData.get('comment') as string,
+      }
+
+      console.log(response)
+
       // await setLoading()
       // const signInResponse = await signIn('credentials', {
       //   redirect: false,
@@ -42,7 +51,11 @@ const ReserveForm = () => {
     }
   )
 
-  return (
+  const { showBanner } = useShowBanner(fetchState)
+
+  return showBanner ? (
+    <Banner text={thanks} />
+  ) : (
     <div className="cmp-reserve-form">
       <h3>{title}</h3>
       <form onSubmit={handleSubmit}>

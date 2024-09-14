@@ -18,18 +18,15 @@ const Inquiry = ({
 }: InquiryModel.Data) => {
   const { fetchState, handleSubmit } = useFetchState(
     async ({ formData, setLoading, setError, setSuccess }) => {
-      await setLoading()
-
-      const answerResponse = await InquiryService.answer(
-        { id },
-        { answer: formData.get('answer') as string }
-      )
-
-      if (!answerResponse || answerResponse instanceof AppError) {
-        await setError()
-      } else {
-        await setSuccess()
-      }
+      // await setLoading()
+      // const answerResponse = await InquiryService.answer({id}, {
+      //   answer: formData.get('answer') as string,
+      // })
+      // if (!answerResponse || answerResponse instanceof AppError) {
+      //   await setError()
+      // } else {
+      //   await setSuccess()
+      // }
     }
   )
 
@@ -75,7 +72,7 @@ const Inquiry = ({
           <p className="text">{desc}</p>
         </div>
       </article>
-      <form onSubmit={handleSubmit}>
+      <form>
         <TextArea id="answer" title="Respuesta" required />
         <StateButton
           text="Enviar"
