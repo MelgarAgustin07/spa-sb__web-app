@@ -168,10 +168,15 @@
         "page": "news",
         "title": "Novedades"
       },
-      "join": {
-        "page": "join",
+      "applyAt": {
+        "page": "apply-at",
         "title": "Postularse",
-        "email": "newuser_0525@outlook.com"
+        "subtitle": "Sé parte de nuestro equipo",
+        "text": "Nos encantaría conocer más sobre ti y lo que puedes aportar a nuestro equipo. Por favor, envíanos toda la información que consideres importante, pero no te olvides de incluir tu CV. ¡Gracias!",
+        "link": {
+          "title": "Enviar correo",
+          "email": "newuser_0525@outlook.com"
+        }
       }
     },
     "dynamic": {
