@@ -20,8 +20,6 @@ const MyApptsSection = () => {
     fetchAsync()
   }, [])
 
-  console.log(appts)
-
   return (
     <section className="my-appts-section">
       {!appts || appts.length === 0 ? (
