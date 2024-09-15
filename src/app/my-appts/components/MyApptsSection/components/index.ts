@@ -1,1 +1,1 @@
-export { default as Inquiry } from './Inquiry/Inquiry'
+export { default as Appointment } from './Appointment/Appointment'

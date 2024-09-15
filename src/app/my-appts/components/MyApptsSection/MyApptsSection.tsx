@@ -1,34 +1,35 @@
-import './InquiriesSection.css'
+import './MyApptsSection.css'
 import { useEffect, useState } from 'react'
 import { Banner } from '@/components'
-import { Inquiry } from './components'
-import { InquiryModel } from '@/models'
-import { InquiryService } from '@/services'
+import { Appointment } from './components'
+import { AppointmentModel } from '@/models'
+import { AppointmentService } from '@/services'
 import { AppError } from '@/helpers'
 
 const MyApptsSection = () => {
-  const [pendingInquiries, setPendingInquiries] =
-    useState<InquiryModel.Data[]>()
+  const [appts, setPendingInquiries] = useState<AppointmentModel.Data[]>()
 
   useEffect(() => {
     const fetchAsync = async () => {
-      const getPendingResponse = await InquiryService.getPending()
+      const myApptsResponse = await AppointmentService.myAppts()
 
-      if (getPendingResponse && !(getPendingResponse instanceof AppError))
-        setPendingInquiries(getPendingResponse)
+      if (myApptsResponse && !(myApptsResponse instanceof AppError))
+        setPendingInquiries(myApptsResponse)
     }
 
     fetchAsync()
   }, [])
 
+  console.log(appts)
+
   return (
-    <section className="inquiries-section">
-      {!pendingInquiries || pendingInquiries.length === 0 ? (
+    <section className="my-appts-section">
+      {!appts || appts.length === 0 ? (
         <Banner type="no-content" text="Nada por aquí ..." />
       ) : (
         <ul>
-          {pendingInquiries.map(item => (
-            <Inquiry key={item.id} {...item} />
+          {appts.map(item => (
+            <Appointment key={item.id} {...item} />
           ))}
         </ul>
       )}

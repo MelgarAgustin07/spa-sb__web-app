@@ -206,7 +206,8 @@
         "title": "Reservar",
         "form": {
           "title": "Elija su turno",
-          "button": "Reservar"
+          "button": "Reservar",
+          "noWeekendWork": "No trabajamos los fines de semana. Por favor, elige otro día."
         },
         "thanks": "¡Tu reserva ha sido confirmada! Puedes ver los detalles en la sección 'Mis Turnos'. ¡Te esperamos!"
       },
