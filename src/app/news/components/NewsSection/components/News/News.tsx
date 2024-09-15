@@ -9,13 +9,7 @@ const News = ({ title, content, imgUrl, createdAt }: NewsModel.Data) => {
 
   return (
     <li className="news">
-      <img
-        // src={imgUrl}
-        src={'https://www.hvs.com/webcontent/images/assets/specific/spa1.jpg'}
-        width={400}
-        height={400}
-        loading="lazy"
-      />
+      <img src={imgUrl} width={400} height={400} loading="lazy" />
       <div>
         <header>
           <h2 className="text">{title}</h2>
