@@ -1,3 +1,4 @@
+/* En el deploy de Vercel este archivo compila mal, lo declaro nuevamente en global.css */
 .cmp-service {
   display: flex;
   flex-direction: column;

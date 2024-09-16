@@ -49,3 +49,24 @@ export const register: {
     return convertedResource
   },
 }
+
+export const me: {
+  output: OutputAdapter<any, UserModel.Data>
+} = {
+  output: response => {
+    const { user } = response
+
+    const convertedResource: UserModel.Data = {
+      id: user.id,
+      name: user.name,
+      lastName: user.lastname,
+      phone: user.phone,
+      email: user.email,
+      role: user.role,
+      profilePhotoUrl: user.profile_photo_url,
+      createdAt: user.created_at,
+    }
+
+    return convertedResource
+  },
+}

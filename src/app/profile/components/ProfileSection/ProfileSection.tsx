@@ -1,12 +1,13 @@
 import './ProfileSection.css'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { Button, Separator } from '@/components'
 import { Label, Props as LabelProps } from './components'
 import { signOut, useSession } from 'next-auth/react'
 import { UserModel } from '@/models'
-import jsonData from '@/data.json'
-
-const { title } = jsonData.pages.dynamic.profile
+import { AuthService } from '@/services'
+import { format } from '@formkit/tempo'
+import { addIfExist, AppError } from '@/helpers'
 
 const roleMatcher: Record<UserModel.Role, string> = {
   admin: 'Administrador',
@@ -18,23 +19,53 @@ const ProfileSection = () => {
   const { data } = useSession()
   const user = data?.user
 
-  const labels: LabelProps[] | undefined = user && [
-    {
-      title: 'Nombre',
-      faIcon: 'fa-solid fa-n',
-      value: user.name,
-    },
-    {
-      title: 'Apellido',
-      faIcon: 'fa-solid fa-a',
-      value: user.lastName,
-    },
-    {
-      title: 'Tipo',
-      faIcon: 'fa-solid fa-user',
-      value: roleMatcher[user.role],
-    },
-  ]
+  const [extendedInfo, setExtendedInfo] = useState<UserModel.Data>()
+
+  useEffect(() => {
+    const fetchAsync = async () => {
+      const meResponse = await AuthService.me()
+
+      if (meResponse && !(meResponse instanceof AppError))
+        setExtendedInfo(meResponse)
+    }
+
+    fetchAsync()
+  }, [])
+
+  const labels =
+    extendedInfo &&
+    addIfExist<LabelProps>([
+      {
+        title: 'Nombre',
+        faIcon: 'fa-solid fa-n',
+        value: user?.name || extendedInfo.name,
+      },
+      {
+        title: 'Apellido',
+        faIcon: 'fa-solid fa-a',
+        value: user?.lastName || extendedInfo.name,
+      },
+      extendedInfo.phone && {
+        title: 'Teléfono',
+        faIcon: 'fa-solid fa-phone',
+        value: extendedInfo.phone,
+      },
+      {
+        title: 'Correo electrónico',
+        faIcon: 'fa-solid fa-envelope',
+        value: extendedInfo.email,
+      },
+      {
+        title: 'Tipo',
+        faIcon: 'fa-solid fa-user',
+        value: roleMatcher[user?.role || extendedInfo.role],
+      },
+      {
+        title: 'Creación',
+        faIcon: 'fa-regular fa-calendar',
+        value: format(extendedInfo.createdAt, { date: 'short', time: 'short' }),
+      },
+    ])
 
   return (
     user && (

@@ -227,6 +227,7 @@ form {
   }
 }
 
+/* Nuevamente declarado */
 .cmp-service {
   display: flex;
   flex-direction: column;

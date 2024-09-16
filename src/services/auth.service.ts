@@ -1,6 +1,6 @@
 import { AuthModel, UserModel } from '@/models'
 import { AuthAdapter } from '@/adapters'
-import { AppError, publicInstance } from '@/helpers'
+import { AppError, privateInstance, publicInstance } from '@/helpers'
 
 const collection = '/auth'
 
@@ -29,4 +29,12 @@ export const register = async (data: UserModel.CreateClientData) => {
   if (!response || response instanceof AppError) return response as AppError
 
   return true
+}
+
+export const me = async () => {
+  const response = await privateInstance.get(`${collection}/me`)
+  if (!response || response instanceof AppError) return response as AppError
+
+  const adaptedResponse = AuthAdapter.me.output(response.data)
+  return adaptedResponse
 }
