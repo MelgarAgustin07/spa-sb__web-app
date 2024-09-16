@@ -30,7 +30,7 @@ const Appointment = ({
       highlight: true,
     },
     {
-      title: 'Fecha del pedido',
+      title: 'Fecha de solicitud',
       value: format(createdAt, { date: 'short', time: 'short' }),
     },
   ]
