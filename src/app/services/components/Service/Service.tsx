@@ -1,4 +1,3 @@
-import './ServiceV.css'
 import Image from 'next/image'
 
 interface Props {
