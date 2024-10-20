@@ -76,18 +76,22 @@
             "treatments": [
               {
                 "title": "Anti-stress",
+                "price": 5000,
                 "desc": "Es un masaje que estimula la microcirculación y relajación profunda de la zona, generando un drenaje linfático completo. Excelente para finalizar tus días."
               },
               {
                 "title": "Descontracturantes",
+                "price": 10000,
                 "desc": "Es un masaje puntual y especifico que libera los tejidos de la piel y el musculo accediendo a las capas profundas de la piel. Muy eficaces para realizarlos una vez por semana."
               },
               {
                 "title": "Piedras calientes",
+                "price": 8000,
                 "desc": "Tratamiento que utiliza la aromaterapia, meditación guiada y un masaje estimulante con piedras calientes, buscando la digitopunción de zonas especificas."
               },
               {
                 "title": "Circulatorios",
+                "price": 10000,
                 "desc": "De manera pre y post entrenamiento, el cuerpo, y sobre todo las piernas necesitan movilizar toxinas para favorecer un exitoso retorno endovenoso. Se combinan estos masajes con vendas y crioterapia."
               }
             ]
@@ -99,14 +103,17 @@
             "treatments": [
               {
                 "title": "Lifting de pestañas",
+                "price": 8000,
                 "desc": "Este servicio alisa, levanta y estira las pestañas suavemente. El Lifting se recomienda para corregir las pestañas rectas, descendientes o con remolinos. Se realiza perfilado de cejas a modo de obsequio."
               },
               {
                 "title": "Depilación facial",
+                "price": 3000,
                 "desc": "Se realiza con cera descartable PREMIUM finalizando dicho servicio con un protector solar y completando asi un tratamiento integral para el rostro."
               },
               {
                 "title": "Belleza de manos y pies",
+                "price": 5000,
                 "desc": "Las manos son nuestra carta de presentación por lo tanto se sugiere siempre tenerlas prolijas, en este SPA realizamos un tratamiento de manicura y pedicura completos, finalizando con un masaje relajante y circulatorio."
               }
             ]
@@ -118,14 +125,17 @@
             "treatments": [
               {
                 "title": "Microexfoliación",
+                "price": 6000,
                 "desc": "Este servicio induce la renovación de las capas superficiales de la piel ayudando a eliminar finas arrugas y manchas brindando un aspecto rejuvenecido. Lo realizamos con aparatolgía como ser Microdermoabrasión o de manera química, con ácidos."
               },
               {
                 "title": "Limpieza profunda + Hidratación",
+                "price": 10000,
                 "desc": "La piel del rostro requiere un cuidado especial, distinta a la del cuerpo, por lo tanto se utilizan productos sin parabenos y con un ph especifico para su cuidado. Para la Hidratación utilizamos Serum's y Máscaras propias para cada fototipo cutáneo."
               },
               {
-                "title": "Criofrecuencia",
+                "title": "Criofrecuencia facial",
+                "price": 12000,
                 "desc": "Es un tratamiento estético, que combina radiofrecuencia con frío; la radiofrecuencia estimula los fibroblastos, que son las células que fabrican el colágeno, por lo tanto, obtenemos una piel radiante y estimulada al final de dicho tratamiento."
               }
             ]
@@ -137,18 +147,22 @@
             "treatments": [
               {
                 "title": "VelaSlim",
+                "price": 5000,
                 "desc": "Es un tratamiento no-invasivo que reduce la celulitis, y que modela el contorno corporal. Junto con el masaje, para la movilización de grasas y la radiofrecuencia bipolar es excelente para la destrucción de adiposidades localizadas y reafirmación de la piel."
               },
               {
                 "title": "DermoHealth",
+                "price": 8000,
                 "desc": "Esta tecnología logra resultados inmediatos para modelado corporal. Está especialmente indicada para combatir la celulitis, convirtiéndolo en el complemento ideal de nuestra terapia de reducción, HImFU. Entre sus beneficios observamos que es no invasiva, mejora la circulación y relaja y estimula las zonas tratadas."
               },
               {
                 "title": "Criofrecuencia",
+                "price": 15000,
                 "desc": "Se trata de un innovador tratamiento corporal que está especialmente pensado para combatir la flacidez, la grasa acumulada y la celulitis, mejorando la silueta devolviendo al cuerpo su tersura y firmeza. Se acompaña el tratamiento con YESOTERAPIA para mayores resultados."
               },
               {
                 "title": "Ultracavitación",
+                "price": 12000,
                 "desc": "La ultracavitación es una técnica reductora cuya principal finalidad es eliminar los depósitos de grasa acumulados en el cuerpo de una manera no invasiva, es decir, sin recurrir a cirugía. Las zonas tratadas con ultracavitación son los muslos, las caderas, los brazos y el abdomen. Se aconseja acompañar dicho tratamiento con masajes localizados y fajas de compresión."
               }
             ]
