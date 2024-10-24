@@ -9,7 +9,7 @@ import { Metadata } from 'next'
 import { ReactNode } from 'react'
 import { Public_Sans, EB_Garamond } from 'next/font/google'
 import { getServerSession } from 'next-auth'
-import { authOptions } from './api/auth/[...nextauth]/route'
+import { authOptions } from '@/auth/config'
 import Script from 'next/script'
 
 interface Props {
