@@ -1,6 +1,5 @@
 import { AuthService } from '@/services'
-import NextAuth from 'next-auth'
-import { NextAuthOptions } from 'next-auth'
+import NextAuth, { NextAuthOptions } from 'next-auth'
 import CredentialsProvider from 'next-auth/providers/credentials'
 import { AppError } from '@/helpers'
 
@@ -63,4 +62,10 @@ export const authOptions: NextAuthOptions = {
 
 const handler = NextAuth(authOptions)
 
-export { handler as GET, handler as POST }
+export async function GET(req: Request) {
+  return handler(req)
+}
+
+export async function POST(req: Request) {
+  return handler(req)
+}
