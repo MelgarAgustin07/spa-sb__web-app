@@ -1,31 +1,21 @@
-'use client'
-
-import { useEffect } from 'react'
-import { SessionProvider } from 'next-auth/react'
-import { PrivateInterceptor, PublicInterceptor } from '@/interceptors'
 import { SimpleHero } from '@/components'
+import { ProtectPage } from '@/guards'
 import { MyApptsSection } from './components'
-import { Protect } from '@/guards'
 import { Metadata } from 'next'
 import { getTitle } from '@/constants'
 import jsonData from '@/data.json'
 
-const { title } = jsonData.pages.dynamic.myAppts
+const { page, title } = jsonData.pages.dynamic.myAppts
 
-const MyAppts = () => {
-  useEffect(() => {
-    PublicInterceptor()
-    PrivateInterceptor()
-  }, [])
-
-  return (
-    <SessionProvider>
-      <Protect>
-        <SimpleHero title={title} />
-        <MyApptsSection />
-      </Protect>
-    </SessionProvider>
-  )
+export const metadata: Metadata = {
+  title: getTitle(title),
 }
+
+const MyAppts = () => (
+  <ProtectPage {...{ page }}>
+    <SimpleHero title={title} />
+    <MyApptsSection />
+  </ProtectPage>
+)
 
 export default MyAppts

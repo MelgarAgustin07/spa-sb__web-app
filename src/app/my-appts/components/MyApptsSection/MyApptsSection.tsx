@@ -1,3 +1,5 @@
+'use client'
+
 import './MyApptsSection.css'
 import { useEffect, useState } from 'react'
 import { Banner } from '@/components'

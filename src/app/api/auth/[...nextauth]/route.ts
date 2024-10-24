@@ -6,7 +6,7 @@ import { AppError } from '@/helpers'
 
 const secret = process.env.NEXTAUTH_SECRET
 
-const authOptions: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: 'Credentials',

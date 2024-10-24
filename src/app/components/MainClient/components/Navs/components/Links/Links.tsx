@@ -21,8 +21,8 @@ interface Props {
 }
 
 const Links = ({ type = 'header' }: Props) => {
-  const { data } = useSession()
-  const user = data?.user
+  const session = useSession()
+  const user = session.data?.user
 
   return (
     <nav className={classList('cmp-links', type)}>

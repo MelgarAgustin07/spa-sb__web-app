@@ -1,10 +1,7 @@
-'use client'
-
 import './Navs.css'
 import Image from 'next/image'
 import { Hamburger, Links } from './components'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { SessionProvider } from 'next-auth/react'
 import jsonData from '@/data.json'
 
 const { logo } = jsonData
@@ -47,7 +44,7 @@ const Navs = () => {
   }, [handleClickOutside, isAsideOpen])
 
   return (
-    <SessionProvider>
+    <>
       <header className="cmp-header">
         <Image
           className="logo"
@@ -63,7 +60,7 @@ const Navs = () => {
       <aside className="cmp-aside" ref={asideRef}>
         <Links type="aside" />
       </aside>
-    </SessionProvider>
+    </>
   )
 }
 

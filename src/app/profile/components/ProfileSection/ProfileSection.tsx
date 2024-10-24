@@ -1,3 +1,5 @@
+'use client'
+
 import './ProfileSection.css'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
@@ -10,9 +12,11 @@ import { format } from '@formkit/tempo'
 import { addIfExist, AppError } from '@/helpers'
 
 const roleMatcher: Record<UserModel.Role, string> = {
-  admin: 'Administrador',
-  client: 'Cliente',
-  staff: 'Staff',
+  [UserModel.Role.DEV]: 'Dev',
+  [UserModel.Role.BOSS]: 'Dueño/a',
+  [UserModel.Role.SECRETARY]: 'Secretario/a',
+  [UserModel.Role.STAFF]: 'Staff',
+  [UserModel.Role.CLIENT]: 'Cliente',
 }
 
 const ProfileSection = () => {
