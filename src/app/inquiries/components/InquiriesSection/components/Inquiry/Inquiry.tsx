@@ -1,7 +1,7 @@
 import './Inquiry.css'
 import { Banner, Icon, StateButton, TextArea } from '@/components'
 import { InfoLabel, Props as InfoLabelProps } from './components'
-import { useFetchState, useShowBanner } from '@/hooks'
+import { useSubmitAction, useShowBanner } from '@/hooks'
 import { InquiryModel } from '@/models'
 import { InquiryService } from '@/services'
 import { format } from '@formkit/tempo'
@@ -16,7 +16,7 @@ const Inquiry = ({
   desc,
   createdAt,
 }: InquiryModel.Data) => {
-  const { fetchState, handleSubmit } = useFetchState(
+  const { actionState, handleSubmit } = useSubmitAction(
     async ({ formData, setLoading, setError, setSuccess }) => {
       await setLoading()
 
@@ -33,7 +33,7 @@ const Inquiry = ({
     }
   )
 
-  const { showBanner } = useShowBanner(fetchState)
+  const { showBanner } = useShowBanner(actionState)
 
   const infoLabels = addIfExist<InfoLabelProps>([
     phone && {
@@ -81,7 +81,7 @@ const Inquiry = ({
           text="Enviar"
           title="Enviar respuesta"
           faIcon="fa-solid fa-arrow-right"
-          fetchState={fetchState}
+          actionState={actionState}
         />
       </form>
     </li>

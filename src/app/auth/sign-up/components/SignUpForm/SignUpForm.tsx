@@ -1,7 +1,7 @@
 'use client'
 
 import { Input, StateButton } from '@/components'
-import { useFetchState } from '@/hooks'
+import { useSubmitAction } from '@/hooks'
 import { useRouter } from 'next/navigation'
 import { signIn } from 'next-auth/react'
 import { AuthService } from '@/services'
@@ -14,7 +14,7 @@ const { title, button } = signUp.form
 const SignUpForm = () => {
   const router = useRouter()
 
-  const { fetchState, handleSubmit } = useFetchState(
+  const { actionState, handleSubmit } = useSubmitAction(
     async ({ formData, setLoading, setError, setSuccess }) => {
       await setLoading()
 
@@ -70,7 +70,7 @@ const SignUpForm = () => {
           minLength={8}
         />
         {/* TODO: implementar input de confirmar contraseña */}
-        <StateButton text={button} title={button} fetchState={fetchState} />
+        <StateButton text={button} title={button} actionState={actionState} />
       </form>
     </div>
   )

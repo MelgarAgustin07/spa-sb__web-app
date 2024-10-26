@@ -1,5 +1,7 @@
 import './Appointment.css'
-import { Icon, Separator } from '@/components'
+import { useCallback } from 'react'
+import { useActionState } from '@/hooks'
+import { Icon, SecureHoldButton, Separator } from '@/components'
 import { classList } from '@/helpers'
 import { AppointmentModel } from '@/models'
 import { format } from '@formkit/tempo'
@@ -11,6 +13,7 @@ const treatments = sections.flatMap(section => section.treatments)
 
 const stateMatcher: Record<AppointmentModel.State, string> = {
   pending: 'Pendiente',
+  paid: 'Pagado',
   cancelled: 'Cancelado',
   completed: 'Completado',
 }
@@ -23,6 +26,14 @@ const Appointment = ({
   state,
   createdAt,
 }: AppointmentModel.Data) => {
+  const { actionState, setLoading, setError, setSuccess } = useActionState()
+
+  const handleCancel = useCallback(async () => {
+    // console.log('hola')
+    // await setLoading()
+    // await setSuccess()
+  }, [])
+
   const infoLabels = [
     {
       title: 'Tratamiento',
@@ -44,6 +55,16 @@ const Appointment = ({
           <h2 className="text">
             {format(`${date}T${hour}`, { date: 'medium', time: 'short' })}
           </h2>
+          {(state === AppointmentModel.State.PENDING ||
+            state === AppointmentModel.State.PAID) && (
+            <SecureHoldButton
+              text="Cancelar"
+              title="Cancelar este turno (Mantener)"
+              faIcon="fa-regular fa-calendar-xmark"
+              actionState={actionState}
+              action={handleCancel}
+            />
+          )}
         </header>
         <Separator />
         <div className="info">

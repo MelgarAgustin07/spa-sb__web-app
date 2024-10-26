@@ -3,7 +3,7 @@
 import './LoginForm.css'
 import { Input, LinkButton, StateButton } from '@/components'
 import { useRouter } from 'next/navigation'
-import { useFetchState } from '@/hooks'
+import { useSubmitAction } from '@/hooks'
 import { signIn } from 'next-auth/react'
 import jsonData from '@/data.json'
 
@@ -13,7 +13,7 @@ const { title, button } = login.form
 const LoginForm = () => {
   const router = useRouter()
 
-  const { fetchState, handleSubmit } = useFetchState(
+  const { actionState, handleSubmit } = useSubmitAction(
     async ({ formData, setLoading, setError, setSuccess }) => {
       await setLoading()
 
@@ -39,7 +39,7 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit}>
         <Input id="email" title="Correo electrónico" required type="email" />
         <Input id="password" title="Contraseña" required type="password" />
-        <StateButton text={button} title={button} fetchState={fetchState} />
+        <StateButton text={button} title={button} actionState={actionState} />
       </form>
       <div className="register">
         <small className="text">¿No tienes una cuenta?</small>

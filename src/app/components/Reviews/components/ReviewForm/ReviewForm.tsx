@@ -1,7 +1,7 @@
 import './ReviewForm.css'
 import { Banner, Icon, StateButton, TextArea } from '@/components'
 import { useState } from 'react'
-import { useFetchState, useShowBanner } from '@/hooks'
+import { useSubmitAction, useShowBanner } from '@/hooks'
 import { ReviewModel } from '@/models'
 import { ReviewService } from '@/services'
 import { AppError } from '@/helpers'
@@ -17,7 +17,7 @@ const ReviewForm = () => {
   const handleMouseLeave = () => setHoveredStar(null)
   const handleClick = (index: number) => setSelectedStar(index)
 
-  const { fetchState, handleSubmit } = useFetchState(
+  const { actionState, handleSubmit } = useSubmitAction(
     async ({ formData, setLoading, setError, setSuccess }) => {
       await setLoading()
 
@@ -34,7 +34,7 @@ const ReviewForm = () => {
     }
   )
 
-  const { showBanner } = useShowBanner(fetchState)
+  const { showBanner } = useShowBanner(actionState)
 
   return showBanner ? (
     <Banner text={thanks} />
@@ -85,7 +85,7 @@ const ReviewForm = () => {
         text="Enviar"
         title="Enviar reseña"
         faIcon="fa-solid fa-arrow-right"
-        fetchState={fetchState}
+        actionState={actionState}
       />
     </form>
   )

@@ -15,6 +15,7 @@
     padding-inline: var(--pal-size-s);
     width: 100%;
 
+    font-weight: 500;
     letter-spacing: 0.0125rem;
     color: var(--pal-color-white);
 
@@ -22,12 +23,18 @@
       background-color: var(--pal-color-b);
     }
 
+    &.paid {
+      background-color: var(--pal-color-a);
+    }
+
     &.cancelled {
       background-color: var(--pal-color-gs-500);
     }
 
     &.completed {
-      background-color: var(--pal-color-a);
+      color: var(--pal-color-a);
+
+      background-color: var(--pal-color-a-l2);
     }
   }
 

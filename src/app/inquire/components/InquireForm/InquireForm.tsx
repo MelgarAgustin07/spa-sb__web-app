@@ -2,7 +2,7 @@
 
 import './InquireForm.css'
 import { Banner, Input, StateButton, TextArea } from '@/components'
-import { useFetchState, useShowBanner } from '@/hooks'
+import { useSubmitAction, useShowBanner } from '@/hooks'
 import { InquiryService } from '@/services'
 import { AppError } from '@/helpers'
 import jsonData from '@/data.json'
@@ -11,7 +11,7 @@ const { form, thanks } = jsonData.pages.stable.inquire
 const { button, title } = form
 
 const InquireForm = () => {
-  const { fetchState, handleSubmit } = useFetchState(
+  const { actionState, handleSubmit } = useSubmitAction(
     async ({ formData, setLoading, setError, setSuccess }) => {
       await setLoading()
 
@@ -31,7 +31,7 @@ const InquireForm = () => {
     }
   )
 
-  const { showBanner } = useShowBanner(fetchState)
+  const { showBanner } = useShowBanner(actionState)
 
   return showBanner ? (
     <Banner text={thanks} />
@@ -51,7 +51,7 @@ const InquireForm = () => {
         />
         <Input id="email" title="Correo electrónico" type="email" required />
         <TextArea id="desc" title="Consulta" required />
-        <StateButton text={button} title={button} fetchState={fetchState} />
+        <StateButton text={button} title={button} actionState={actionState} />
       </form>
     </div>
   )

@@ -228,7 +228,7 @@
           "button": "Reservar",
           "noWeekendWork": "No trabajamos los fines de semana. Por favor, elige otro día."
         },
-        "thanks": "¡Tu reserva ha sido confirmada! Puedes ver los detalles en la sección 'Mis Turnos'. ¡Te esperamos!"
+        "thanks": "¡Tu reserva ha sido confirmada! Podés consultarla en la sección 'Mis Turnos'. Recordá realizar el pago antes de las 48 hs."
       },
       "myAppts": {
         "page": "my-appts",

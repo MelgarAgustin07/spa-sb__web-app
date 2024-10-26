@@ -99,6 +99,7 @@ button {
   letter-spacing: 0.0125rem;
 
   border-radius: var(--pal-size-2xs);
+  overflow: hidden;
   cursor: pointer;
 }
 

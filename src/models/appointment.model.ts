@@ -1,5 +1,6 @@
 export enum State {
   PENDING = 'pending',
+  PAID = 'paid',
   CANCELLED = 'cancelled',
   COMPLETED = 'completed',
 }

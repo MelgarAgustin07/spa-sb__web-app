@@ -3,7 +3,7 @@
 import './ReserveForm.css'
 import { ChangeEventHandler, useState, useMemo, useEffect } from 'react'
 import { Banner, Input, Loader, StateButton, TextArea } from '@/components'
-import { useFetchState, useShowBanner } from '@/hooks'
+import { useSubmitAction, useShowBanner } from '@/hooks'
 import { AppointmentService } from '@/services'
 import { WORK_HOURS } from '@/constants'
 import { AppError } from '@/helpers'
@@ -69,7 +69,7 @@ const ReserveForm = () => {
     fetchAsync()
   }, [date])
 
-  const { fetchState, handleSubmit } = useFetchState(
+  const { actionState, handleSubmit } = useSubmitAction(
     async ({ formData, setLoading, setError, setSuccess }) => {
       await setLoading()
 
@@ -88,7 +88,7 @@ const ReserveForm = () => {
     }
   )
 
-  const { showBanner } = useShowBanner(fetchState)
+  const { showBanner } = useShowBanner(actionState)
 
   let idTreatment = 0
 
@@ -144,7 +144,7 @@ const ReserveForm = () => {
           )}
         </div>
         <TextArea id="comments" title="Comentarios" />
-        <StateButton text={button} title={button} fetchState={fetchState} />
+        <StateButton text={button} title={button} actionState={actionState} />
       </form>
     </div>
   )

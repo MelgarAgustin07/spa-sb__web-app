@@ -1,36 +1,36 @@
 import './StateButton.css'
 import { Icon, Loader } from '..'
-import { FetchState } from '@/hooks'
+import { ActionState } from '@/hooks'
 import { classList } from '@/helpers'
 
 interface Props {
   text?: string
   title: string
   faIcon?: string
-  fetchState: FetchState
+  actionState: ActionState
 }
 
 const StateButton = ({
   text,
   title,
   faIcon = 'fa-solid fa-arrow-right',
-  fetchState,
+  actionState,
 }: Props) => (
   <button
     className="cmp-state-button button-look"
     title={title}
-    disabled={fetchState !== 'ready'}
+    disabled={actionState !== 'ready'}
   >
-    <Loader handlingClass={classList({ active: fetchState === 'loading' })} />
+    <Loader handlingClass={classList({ active: actionState === 'loading' })} />
     <Icon
       faIcon="fa-solid fa-xmark"
-      handlingClass={classList({ active: fetchState === 'error' })}
+      handlingClass={classList({ active: actionState === 'error' })}
     />
     <Icon
       faIcon="fa-solid fa-check"
-      handlingClass={classList({ active: fetchState === 'success' })}
+      handlingClass={classList({ active: actionState === 'success' })}
     />
-    <div className={classList('body', { active: fetchState === 'ready' })}>
+    <div className={classList('body', { active: actionState === 'ready' })}>
       {text}
       <Icon faIcon={faIcon} />
     </div>

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
-import { FetchState } from '.'
+import { ActionState } from '.'
 
-export const useShowBanner = (fetchState: FetchState) => {
+export const useShowBanner = (actionState: ActionState) => {
   const [showBanner, setShowBanner] = useState(false)
 
   useEffect(() => {
-    if (fetchState === 'success' && !showBanner) setShowBanner(true)
-  }, [fetchState, showBanner])
+    if (actionState === 'success' && !showBanner) setShowBanner(true)
+  }, [actionState, showBanner])
 
   return { showBanner }
 }
