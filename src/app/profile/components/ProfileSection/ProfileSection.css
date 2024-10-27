@@ -41,6 +41,8 @@
 
     .cmp-button {
       align-self: flex-end;
+
+      aspect-ratio: initial;
     }
   }
 

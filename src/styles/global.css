@@ -78,29 +78,87 @@ button {
 
   background-color: transparent;
   cursor: pointer;
+}
 
-  &:disabled {
-    box-shadow: initial !important;
-    cursor: default;
-  }
-
-  &:active {
-    box-shadow: initial !important;
-  }
+:root {
+  --cls-color: var(--pal-color-white);
+  --cls-background-color: var(--pal-color-a);
 }
 
 .button-look {
+  --gap: var(--pal-size-s);
+
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: var(--gap);
   padding-inline: var(--pal-size-l);
+  height: var(--pal-size-2xl);
 
   font-weight: 500;
+  white-space: nowrap;
   letter-spacing: 0.0125rem;
+  color: var(--cls-color);
 
   border-radius: var(--pal-size-2xs);
+  background-color: var(--cls-background-color);
   overflow: hidden;
-  cursor: pointer;
+
+  &:disabled {
+    cursor: default;
+  }
+
+  &.secondary {
+    border-width: 0.0625rem;
+    border-style: solid;
+    border-color: var(--cls-background-color);
+
+    color: var(--cls-background-color);
+
+    background-color: initial;
+  }
+
+  &.l {
+    --gap: var(--pal-size-m);
+    --cmp-icon-size: var(--pal-size-font-m);
+
+    height: 3.5rem;
+
+    font-size: var(--pal-size-font-m);
+
+    border-radius: var(--border-radius);
+  }
+
+  &.state {
+    position: relative;
+
+    > * {
+      position: absolute;
+
+      scale: 0;
+      opacity: 0;
+
+      transition: scale var(--pal-time-m) ease,
+        opacity var(--pal-time-m) ease-out;
+    }
+
+    .active {
+      scale: 1;
+      opacity: initial;
+    }
+
+    > .cmp-icon {
+      --cmp-icon-size: var(--pal-size-font-m);
+    }
+
+    .body {
+      --cmp-icon-size: var(--pal-size-font-s);
+
+      display: flex;
+      align-items: center;
+      gap: var(--gap);
+    }
+  }
 }
 
 form {

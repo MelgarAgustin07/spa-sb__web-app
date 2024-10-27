@@ -1,9 +1,13 @@
+'use client'
+
 import './Appointment.css'
 import { useCallback } from 'react'
+import { usePathname } from 'next/navigation'
 import { useActionState } from '@/hooks'
-import { Icon, SecureHoldButton, Separator } from '@/components'
-import { classList } from '@/helpers'
+import { Icon, LinkButton, SecureHoldButton, Separator } from '@/components'
+import { AppError, classList } from '@/helpers'
 import { AppointmentModel } from '@/models'
+import { AppointmentService } from '@/services'
 import { format } from '@formkit/tempo'
 import jsonData from '@/data.json'
 
@@ -18,20 +22,33 @@ const stateMatcher: Record<AppointmentModel.State, string> = {
   completed: 'Completado',
 }
 
+interface Props {
+  confirmCancel: () => void
+}
+
 const Appointment = ({
+  id,
   idTreatment,
   date,
   hour,
   comments,
   state,
   createdAt,
-}: AppointmentModel.Data) => {
+  confirmCancel,
+}: AppointmentModel.Data & Props) => {
+  const pathname = usePathname()
   const { actionState, setLoading, setError, setSuccess } = useActionState()
 
   const handleCancel = useCallback(async () => {
-    // console.log('hola')
-    // await setLoading()
-    // await setSuccess()
+    await setLoading()
+    const answerResponse = await AppointmentService.cancel({ id })
+
+    if (!answerResponse || answerResponse instanceof AppError) {
+      await setError()
+    } else {
+      await setSuccess()
+      confirmCancel()
+    }
   }, [])
 
   const infoLabels = [
@@ -49,22 +66,33 @@ const Appointment = ({
   return (
     <li className="appointment">
       <small className={state}>{stateMatcher[state]}</small>
-      <div>
+      <div className="content">
         <header>
-          <Icon faIcon="fa-regular fa-calendar" />
-          <h2 className="text">
-            {format(`${date}T${hour}`, { date: 'medium', time: 'short' })}
-          </h2>
-          {(state === AppointmentModel.State.PENDING ||
-            state === AppointmentModel.State.PAID) && (
-            <SecureHoldButton
-              text="Cancelar"
-              title="Cancelar este turno (Mantener)"
-              faIcon="fa-regular fa-calendar-xmark"
-              actionState={actionState}
-              action={handleCancel}
-            />
-          )}
+          <div className="group">
+            <Icon faIcon="fa-regular fa-calendar" />
+            <h2 className="text">
+              {format(`${date}T${hour}`, { date: 'medium', time: 'short' })}
+            </h2>
+          </div>
+          <div className="actions">
+            {(state === AppointmentModel.State.PENDING ||
+              state === AppointmentModel.State.PAID) && (
+              <SecureHoldButton
+                text="Cancelar"
+                title="Cancelar este turno"
+                actionState={actionState}
+                type="secondary"
+                action={handleCancel}
+              />
+            )}
+            {state === AppointmentModel.State.PENDING && (
+              <LinkButton
+                title="Pagar"
+                faIcon="fa-solid fa-credit-card"
+                href={`${pathname}/pay/${id}`}
+              />
+            )}
+          </div>
         </header>
         <Separator />
         <div className="info">

@@ -88,6 +88,7 @@ const ProfileSection = () => {
           <Button
             title="Cerrar sesión"
             faIcon="fa-solid fa-arrow-right-from-bracket"
+            _type="secondary"
             onClick={() => signOut()}
           />
         </header>

@@ -4,9 +4,6 @@
   }
 
   .register {
-    --cmp-link-button-color: var(--pal-color-base-a);
-    --cmp-link-button-secondary-hover: var(--pal-color-a);
-
     display: flex;
     flex-direction: column;
     gap: var(--pal-size-l);

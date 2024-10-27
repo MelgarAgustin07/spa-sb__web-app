@@ -46,7 +46,7 @@ const LoginForm = () => {
         <LinkButton
           title="Registrarse"
           href={`/${signUp.page}`}
-          style={{ type: 'secondary' }}
+          type="secondary"
         />
       </div>
     </div>

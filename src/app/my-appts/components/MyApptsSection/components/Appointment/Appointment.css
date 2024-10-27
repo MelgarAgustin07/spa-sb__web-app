@@ -38,7 +38,7 @@
     }
   }
 
-  > * {
+  > .content {
     --cmp-separator-color: var(--pal-color-gs-200);
 
     display: flex;
@@ -47,20 +47,42 @@
     padding: var(--pal-size-xl);
 
     header {
-      --cmp-icon-size: var(--pal-size-l);
-
       display: flex;
       align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
       gap: var(--pal-size-l);
 
-      color: var(--pal-color-gs-500);
+      .group {
+        --cmp-icon-size: var(--pal-size-l);
 
-      h2 {
-        font-size: var(--pal-size-font-l);
-        font-family: var(--pal-font-a);
-        letter-spacing: 0.0125rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: var(--pal-size-l);
 
-        color: var(--pal-color-gs-700);
+        color: var(--pal-color-gs-500);
+
+        h2 {
+          font-size: var(--pal-size-font-l);
+          font-family: var(--pal-font-a);
+          letter-spacing: 0.0125rem;
+
+          color: var(--pal-color-gs-700);
+        }
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--pal-size-m);
+
+        .cmp-secure-hold-button {
+          --cls-background-color: var(--pal-color-gs-600);
+          --cmp-secure-hold-button-progress-color: var(--pal-color-b);
+
+          width: 7rem;
+        }
       }
     }
 
@@ -72,6 +94,7 @@
 
       .item {
         display: flex;
+        flex-wrap: wrap;
         gap: var(--pal-size-m);
 
         color: var(--pal-color-gs-800);

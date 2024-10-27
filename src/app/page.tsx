@@ -33,12 +33,13 @@ const Home = () => (
             title={reserve.title}
             faIcon="fa-regular fa-calendar-check"
             href={reserve.page}
-            style={{ size: 'l' }}
+            size="l"
           />
           <LinkButton
             title="Descubre más"
             href="#about-us"
-            style={{ type: 'secondary', size: 'l' }}
+            type="secondary"
+            size="l"
           />
         </div>
       </div>

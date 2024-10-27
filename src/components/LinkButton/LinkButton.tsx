@@ -7,21 +7,15 @@ import { AnchorHTMLAttributes } from 'react'
 interface Props extends AnchorHTMLAttributes<HTMLAnchorElement> {
   faIcon?: string
   href: string
-  style?: {
-    type?: 'primary' | 'secondary'
-    size?: 's' | 'm' | 'l'
-  }
+  type?: 'secondary'
+  size?: 'l'
 }
 
-const LinkButton = ({ title, faIcon, href, style }: Props) => (
+const LinkButton = ({ title, faIcon, href, type, size, ...rest }: Props) => (
   <Link
-    className={classList(
-      'cmp-link-button',
-      'button-look',
-      style?.type || 'primary',
-      style?.size || 'm'
-    )}
+    className={classList('cmp-link-button', 'button-look', type, size)}
     href={href}
+    {...rest}
   >
     {title}
     {faIcon && <Icon faIcon={faIcon} />}

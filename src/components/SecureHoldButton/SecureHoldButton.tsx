@@ -11,6 +11,7 @@ interface Props {
   title: string
   faIcon?: string
   actionState: ActionState
+  type?: 'secondary'
   action: () => Promise<void>
 }
 
@@ -19,6 +20,7 @@ const SecureHoldButton = ({
   title,
   faIcon,
   actionState,
+  type,
   action,
 }: Props) => {
   const timerRef = useRef<NodeJS.Timeout | null>(null)
@@ -36,8 +38,13 @@ const SecureHoldButton = ({
 
   return (
     <button
-      className="cmp-secure-hold-button button-look"
-      title={title}
+      className={classList(
+        'cmp-secure-hold-button',
+        'button-look',
+        'state',
+        type
+      )}
+      title={`${title} (Mantener)`}
       disabled={actionState !== 'ready'}
       onMouseDown={handleMouseDown}
       onMouseUp={handleMouseUp}

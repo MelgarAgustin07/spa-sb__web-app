@@ -8,6 +8,7 @@ interface Props {
   title: string
   faIcon?: string
   actionState: ActionState
+  type?: 'secondary'
 }
 
 const StateButton = ({
@@ -15,9 +16,10 @@ const StateButton = ({
   title,
   faIcon = 'fa-solid fa-arrow-right',
   actionState,
+  type,
 }: Props) => (
   <button
-    className="cmp-state-button button-look"
+    className={classList('cmp-state-button', 'button-look', 'state', type)}
     title={title}
     disabled={actionState !== 'ready'}
   >

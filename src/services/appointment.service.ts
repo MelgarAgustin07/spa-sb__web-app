@@ -34,3 +34,12 @@ export const create = async (data: AppointmentModel.CreateData) => {
 
   return true
 }
+
+export const cancel = async (params: { id: number }) => {
+  const { id } = params
+
+  const response = await privateInstance.put(`${collection}/${id}/cancel`)
+  if (!response || response instanceof AppError) return response as AppError
+
+  return true
+}

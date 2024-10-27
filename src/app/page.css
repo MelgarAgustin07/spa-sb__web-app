@@ -30,12 +30,11 @@
       margin-inline: auto;
 
       > * {
+        --cls-color: var(--pal-color-gs-900);
+        --cls-background-color: var(--pal-color-a-l2);
+
         flex-grow: 1;
         flex-basis: 13.5rem;
-
-        &:nth-of-type(1) {
-          color: var(--pal-color-gs-900);
-        }
       }
     }
   }
