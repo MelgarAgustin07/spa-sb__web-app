@@ -49,6 +49,22 @@ export const create: {
       hour_turn: data.hour,
       comment_turn: data.comments,
     }
+
+    return convertedResource
+  },
+}
+
+export const pay: {
+  input: InputAdapter<AppointmentModel.PayData, AppointmentModel.PayBody>
+} = {
+  input: data => {
+    const convertedResource: AppointmentModel.PayBody = {
+      id_turn_invoice: data.id,
+      payment_method: data.cardType,
+      lastdigit: data.lastCardDigits,
+      amount: data.amount,
+    }
+
     return convertedResource
   },
 }

@@ -43,3 +43,12 @@ export const cancel = async (params: { id: number }) => {
 
   return true
 }
+
+export const pay = async (data: AppointmentModel.PayData) => {
+  const adaptedInput = AppointmentAdapter.pay.input(data)
+
+  const response = await privateInstance.post('invoices', adaptedInput)
+  if (!response || response instanceof AppError) return response as AppError
+
+  return true
+}

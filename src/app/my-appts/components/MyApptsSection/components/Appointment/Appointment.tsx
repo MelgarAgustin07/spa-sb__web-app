@@ -11,7 +11,9 @@ import { AppointmentService } from '@/services'
 import { format } from '@formkit/tempo'
 import jsonData from '@/data.json'
 
-const { sections } = jsonData.pages.stable.services
+const { stable, dynamic } = jsonData.pages
+const { sections } = stable.services
+const { page } = dynamic.myAppts.pages.pay
 
 const treatments = sections.flatMap(section => section.treatments)
 
@@ -89,7 +91,9 @@ const Appointment = ({
               <LinkButton
                 title="Pagar"
                 faIcon="fa-solid fa-credit-card"
-                href={`${pathname}/pay/${id}`}
+                href={`${pathname}/${page}/${id}?id-treatment=${
+                  idTreatment - 1
+                }`}
               />
             )}
           </div>

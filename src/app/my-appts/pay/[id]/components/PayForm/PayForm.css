@@ -1,0 +1,27 @@
+.cmp-pay-form {
+  .resume {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pal-size-l);
+    padding: var(--pal-size-l);
+
+    border-radius: var(--pal-size-2xs);
+    background-color: var(--pal-color-a-l2);
+
+    .in-installments {
+      display: flex;
+      align-items: center;
+      gap: var(--pal-size-m);
+
+      font-size: var(--pal-size-font-m);
+
+      .count {
+        font-weight: 500;
+      }
+
+      .multi {
+        opacity: 0.5;
+      }
+    }
+  }
+}

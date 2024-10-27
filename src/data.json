@@ -232,7 +232,18 @@
       },
       "myAppts": {
         "page": "my-appts",
-        "title": "Mis Turnos"
+        "title": "Mis Turnos",
+        "pages": {
+          "pay": {
+            "page": "pay",
+            "title": "Pago",
+            "form": {
+              "title": "Ingrese su tarjeta",
+              "button": "Confirmar pago"
+            },
+            "thanks": "¡Muchas gracias! Tu pago a sido confirmado. ¡Te esperamos!"
+          }
+        }
       },
       "inquiries": {
         "page": "inquiries",

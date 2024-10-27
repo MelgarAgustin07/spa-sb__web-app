@@ -1,0 +1,28 @@
+.cmp-price {
+  display: flex;
+  align-items: center;
+  gap: var(--pal-size-xs);
+
+  font-size: var(--pal-size-font-m);
+  white-space: nowrap;
+
+  .currency {
+    font-size: var(--pal-size-font-s);
+    color: var(--pal-color-a-d1);
+  }
+
+  .value {
+    display: flex;
+    gap: var(--pal-size-3xs);
+
+    font-weight: 500;
+    color: var(--pal-color-gs-900);
+
+    .decimal {
+      font-size: 0.75rem;
+      font-weight: initial;
+
+      opacity: 0.5;
+    }
+  }
+}

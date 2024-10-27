@@ -240,7 +240,9 @@ form {
 
     > * {
       width: 100%;
+    }
 
+    > h3 {
       text-align: center;
     }
   }
@@ -249,7 +251,7 @@ form {
 .control {
   display: flex;
   flex-direction: column;
-  gap: 0.4375rem;
+  gap: var(--pal-size-s);
 
   label {
     display: flex;

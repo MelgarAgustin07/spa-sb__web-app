@@ -40,3 +40,22 @@ export interface CreateBody {
   hour_turn: string
   comment_turn?: string
 }
+
+export enum CardType {
+  CREDIT = 'credit',
+  DEBIT = 'debit',
+}
+
+export interface PayData {
+  id: number
+  cardType: CardType
+  lastCardDigits: number
+  amount: number
+}
+
+export interface PayBody {
+  id_turn_invoice: number
+  payment_method: CardType
+  lastdigit: number
+  amount: number
+}
