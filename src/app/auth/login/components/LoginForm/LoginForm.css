@@ -1,4 +1,6 @@
 .cmp-login-form {
+  text-align: center;
+
   h3 {
     color: var(--pal-color-a-d2);
   }
